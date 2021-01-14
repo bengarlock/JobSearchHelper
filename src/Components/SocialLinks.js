@@ -1,7 +1,12 @@
 import React from "react"
 import "../Stylesheets/SocialLinks.css"
 
+const date = String(new Date())
+
+
 class SocialLinks extends React.Component {
+
+
 
     onClickHandler = (e) => {
         if (e.target.id === "linked-in") {
@@ -13,6 +18,16 @@ class SocialLinks extends React.Component {
         } else if (e.target.id === "portfolio") {
             navigator.clipboard.writeText('https://bengarlock.com')
             e.target.style.backgroundColor = "#2a603a"
+        } else if (e.target.id === "account-manager-title") {
+            navigator.clipboard.writeText('Sr. Account Manager')
+            e.target.style.backgroundColor = "#2a603a"
+        } else if (e.target.id === "account-manager-role") {
+            navigator.clipboard.writeText("Directly responsible for maintaining 300+ elite, high-value OpenTable restaurant partnerships.\n \n" +
+                "Coordinated with software development teams to provide product feedback, deploy new features, and conduct production tests.\n \n" +
+                "Utilized data and analytical tools to assist OpenTable partners in optimizing best practices and use of the OpenTable " +
+                "platform including marketing, business development products, and inventory utilization.\n \n" +
+                "Lead partner's system conversion efforts from a legacy system built on client-server architecture to a " +
+                "cloud-based technology product.")
         }
     }
 
@@ -30,6 +45,18 @@ class SocialLinks extends React.Component {
                     <div className='social-link'  id="portfolio"
                          onClick={this.onClickHandler}>Portfolio</div>
                 </div>
+                <h3>Shortcuts</h3>
+                <div className='social-link'>{date}</div>
+
+                <h3>Resume Breakdown</h3>
+                <div className='social-link' id="account-manager-title"
+                     onClick={this.onClickHandler}>Sr. Account Manager - Title
+                </div>
+                <div className='social-link' id="account-manager-role"
+                     onClick={this.onClickHandler}>Sr. Account Manager - Role
+                </div>
+
+
 
             </div>
         )
