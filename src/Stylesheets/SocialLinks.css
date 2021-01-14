@@ -1,0 +1,23 @@
+#links-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-link {
+    margin: 4px;
+    flex: 1;
+    background-color: #666767;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    user-select: none;
+}
+
+.social-link:hover {
+    background-color: #266e6e;
+    transition: .5s;
+}

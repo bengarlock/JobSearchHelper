@@ -1,0 +1,25 @@
+
+#menu-wrapper {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    flex: 1;
+    min-width: 300px;
+}
+
+.menu-item {
+    user-select: none;
+    padding: 1em;
+}
+
+.menu-item:hover {
+    background-color: darkcyan;
+    transition: .5s;
+}
+
+.menu-item-selected {
+    user-select: none;
+    padding: 1em;
+    background-color: #225d5d;
+    transition: .5s;
+}
