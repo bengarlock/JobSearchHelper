@@ -1,7 +1,9 @@
 import React from "react"
 import "../Stylesheets/SocialLinks.css"
 
-const date = String(new Date())
+const date = new Date()
+const dateFormatted = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()
+
 
 
 class SocialLinks extends React.Component {
@@ -28,6 +30,12 @@ class SocialLinks extends React.Component {
                 "platform including marketing, business development products, and inventory utilization.\n \n" +
                 "Lead partner's system conversion efforts from a legacy system built on client-server architecture to a " +
                 "cloud-based technology product.")
+        } else if (e.target.id === "job-tracker-template") {
+            navigator.clipboard.writeText(dateFormatted + "\t"
+                + this.props.company.company_name + "\t "
+                + this.props.company.job_title + "\t"
+                + "Applied" + "\t"
+                + this.props.company.url)
         }
     }
 
@@ -36,17 +44,17 @@ class SocialLinks extends React.Component {
         return(
             <div id="content-wrapper">
                 <h3>Social Links</h3>
-
-                <div id="links-wrapper">
+                
                     <div className='social-link' id="linked-in"
                          onClick={this.onClickHandler}> LinkedIn </div>
                     <div className='social-link'  id="github"
                          onClick={this.onClickHandler}>GitHub</div>
                     <div className='social-link'  id="portfolio"
                          onClick={this.onClickHandler}>Portfolio</div>
-                </div>
+
                 <h3>Shortcuts</h3>
-                <div className='social-link'>{date}</div>
+                <div className='social-link' id="job-tracker-template"
+                     onClick={this.onClickHandler}>{dateFormatted}</div>
 
                 <h3>Resume Breakdown</h3>
                 <div className='social-link' id="account-manager-title"

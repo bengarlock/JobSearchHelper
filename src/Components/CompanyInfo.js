@@ -1,5 +1,7 @@
 import React from "react"
 import "../Stylesheets/CompanyInfo.css"
+import resume from "../Media/Resume - Ben Garlock.pdf"
+import TechButton from "../Cards/TechButton";
 
 class Content extends React.Component {
 
@@ -35,6 +37,36 @@ class Content extends React.Component {
         // })
     }
 
+    renderDocs = () => {
+        return (
+            <>
+                <h3>Documents</h3>
+                <a href={resume}
+                   className="doc-link"
+                   download={"Ben Garlock - "
+                   + `${this.props.company.company_name}`
+                   + " - "
+                   + `${this.props.company.job_title}`
+                   + ".pdf"}>Resume</a>
+            </>
+        )
+    }
+
+    renderTechnology = () => {
+        let technologies = ["JavaScript", "HTML", "Python", "Ruby on Rails", "Postgres", "MySQL"]
+        return (
+            <>
+                <h3>Required Technologies - {this.props.company.technologies}</h3>
+                <div id="tech-wrapper">
+                    {technologies.map(tech => <TechButton
+                        key={technologies.indexOf(tech)}
+                        tech={tech}
+                        updateTechnologies={this.props.updateTechnologies}/>)}
+                </div>
+            </>
+        )
+    }
+
     render() {
         return(
             <div id="content">
@@ -60,6 +92,16 @@ class Content extends React.Component {
                            <br />
                     <input type="submit"/>
                 </form>
+
+                <div>
+                    {this.props.company.company_name ? this.renderTechnology() : null}
+                </div>
+
+                <div id="doc-wrapper">
+                    {this.props.company.company_name ? this.renderDocs() : null}
+                </div>
+
+
             </div>
         )
     }

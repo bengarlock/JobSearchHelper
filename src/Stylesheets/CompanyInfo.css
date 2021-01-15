@@ -5,3 +5,30 @@ input {
     margin: 2px;
     padding: 1em;
 }
+
+#tech-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#doc-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.doc-link {
+    margin: 4px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #357c7c;
+
+    text-align: center;
+    color: white;
+    user-select: none;
+}
+
+.doc-link:hover {
+    background-color: #225d5d;
+    transition: .5s;
+}

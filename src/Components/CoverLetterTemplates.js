@@ -53,11 +53,22 @@ class CoverLetterTemplates extends React.Component {
                                 I’m confident my technical knowledge and previous work experience will be a significant
                                 asset in {this.props.company.company_name}’s goals.</p>
 
-                            In my previous role at OpenTable, I was charged with working with several international teams across the company including engineers, product managers, and designers to develop and expand our core product lines and deliver new features to our customers.  Being in a client-facing role has given me unique insight to the importance of listening to customers and using collaboration to not only deliver high-quality products and services, but to do so in a timely fashion.
+                            In my previous role at OpenTable, I was charged with working with several international
+                            teams across the company including engineers, product managers, and designers to develop
+                            and expand our core product lines and deliver new features to our customers.
+                            Being in a client-facing role has given me unique insight to the importance of listening
+                            to customers and using collaboration to not only deliver high-quality products and services,
+                            but to do so in a timely fashion.
 
-                            With regards to the technical requirements of this position, I recently completed Flatiron School’s Software Engineering program which has given me a practical application of many of the technologies and frameworks this position requires including Python, JavaScript, Postgres, Django and many others.
+                            With regards to the technical requirements of this position, I recently completed Flatiron
+                            School’s Software Engineering program which has given me a practical application of many of
+                            the technologies and frameworks this position requires including Python, JavaScript,
+                            Postgres, Django and many others.
 
-                            I’d welcome the opportunity to talk with you about the work you’re doing at Splunk and how I can add value to your team. I’m available for an introductory call or meeting and would be happy to work around your schedule.
+                            I’d welcome the opportunity to talk with you about the work you’re doing
+                            at {this.props.company.company_name} and how I can add value to your team.
+                            I’m available for an introductory call or meeting and would be happy to work
+                            around your schedule.
 
                             Thank you in advance for your time.
 

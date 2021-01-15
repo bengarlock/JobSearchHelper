@@ -13,7 +13,8 @@ class Content extends React.Component {
                 {this.props.currentPage === "company-info" ? <CompanyInfo
                     currentPage={this.props.currentPage}
                     setCompany={this.props.setCompany}
-                    company={this.props.company}/> : null}
+                    company={this.props.company}
+                    updateTechnologies={this.props.updateTechnologies}/> : null}
 
                 {this.props.currentPage === "cover-letter" ? <CoverLetterTemplates
                     company={this.props.company}/> : null}
