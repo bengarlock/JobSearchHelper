@@ -39,7 +39,7 @@ class Content extends React.Component {
 
     renderDocs = () => {
         return (
-            <>
+            <div className="doc-wrapper">
                 <h3>Documents</h3>
                 <a href={resume}
                    className="doc-link"
@@ -48,12 +48,12 @@ class Content extends React.Component {
                    + " - "
                    + `${this.props.company.job_title}`
                    + ".pdf"}>Resume</a>
-            </>
+            </div>
         )
     }
 
     renderTechnology = () => {
-        let technologies = ["JavaScript", "HTML", "Python", "Ruby on Rails", "Postgres", "MySQL", "CSS"]
+        let technologies = ["JavaScript", "HTML", "CSS", "Python", "Ruby on Rails", "Postgres", "MySQL"]
         return (
             <>
                 <h3>Required Technologies - {this.props.company.technologies}</h3>
@@ -69,7 +69,7 @@ class Content extends React.Component {
 
     render() {
         return(
-            <div id="content">
+            <div id="content-wrapper">
                 <h3>Company Info</h3>
                 <form id="company-form" onSubmit={this.onSubmitHandler}>
                     <input name="company-name"

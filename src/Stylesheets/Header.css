@@ -4,11 +4,11 @@
     background: rgb(147,147,147);
     background: linear-gradient(90deg, rgba(147,147,147,1) 0%, rgba(0,0,0,1) 99%);
     text-align: center;
+    height: 1.5em;
 }
 
 #company-name-header {
     background-color: #266e6e;
-    width: 100vw;
     text-align: center;
     color: white;
 }

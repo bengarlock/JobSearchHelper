@@ -1,6 +1,7 @@
 import React from "react"
-import CompanyInfo from "./CompanyInfo";
 import "../Stylesheets/CoverLetterTemplate.css"
+import coverLetter from "../Media/Cover Letter - Template.docx"
+import resume from "../Media/Resume - Ben Garlock.pdf";
 
 class CoverLetterTemplates extends React.Component {
 
@@ -16,11 +17,27 @@ class CoverLetterTemplates extends React.Component {
                 {this.props.company.company_name ? (
 
                     <>
-                        <div className="template-wrapper">
-                            <h3>Sales Engineering</h3>
-                            <p>Hello {this.props.company.company_name} Team, </p>
+                        <div className="doc-wrapper">
+                            <h3>Documents</h3>
+                            <a href={coverLetter}
+                               className="doc-link"
+                               download={"Ben Garlock - "
+                               + `${this.props.company.company_name}`
+                               + " - "
+                               + `${this.props.company.job_title}`
+                               + " - Cover Letter.docx"}>Cover Letter Template</a>
+                        </div>
 
-                            <p>I'm excited to present my application for the <b>{this.props.company.job_title ?
+
+                        <div className="doc-wrapper">
+
+                            <h3>Sales Engineering</h3>
+                            <p>
+                                Hello {this.props.company.company_name} Team,
+                            </p>
+
+                            <p>
+                                I'm excited to present my application for the <b>{this.props.company.job_title ?
                                 this.props.company.job_title : "Sales Engineering"} </b>
                                 position. Learning about {this.props.company.company_name}'s
                                 emphasis of using data to power decision making is a value that I've had fifteen years
@@ -45,35 +62,34 @@ class CoverLetterTemplates extends React.Component {
                                 Thank you for your time, and I look forward to speaking with you.
                             </p>
                         </div>
-                        <div className="template-wrapper">
+                        <div className="doc-wrapper">
                             <h3>Software Engineer</h3>
-                            <p>Hello {this.props.company.company_name} Team, </p>
+                            <p> Hello {this.props.company.company_name} Team, </p>
 
-                            <p>I’m very excited to submit my application for the {this.props.company.job_title} position.
-                                I’m confident my technical knowledge and previous work experience will be a significant
-                                asset in {this.props.company.company_name}’s goals.</p>
+                            <p> I’m pleased to submit my application for the <b>{this.props.company.job_title ?
+                                this.props.company.job_title : "Software Engineer"} </b> position.
+                                I’m excited at the prospect of applying my technical knowledge and previous work
+                                experience to further {this.props.company.company_name}'s goals.</p>
 
-                            In my previous role at OpenTable, I was charged with working with several international
-                            teams across the company including engineers, product managers, and designers to develop
-                            and expand our core product lines and deliver new features to our customers.
-                            Being in a client-facing role has given me unique insight to the importance of listening
-                            to customers and using collaboration to not only deliver high-quality products and services,
-                            but to do so in a timely fashion.
+                            <p> In my previous role at OpenTable, I was charged with working with several international
+                                teams across the company including engineers, product managers, and designers to develop
+                                and expand our core product lines and deliver new features to our customers. Being in a
+                                client-facing role has given me unique insight to the importance of listening to
+                                customers and using collaboration to not only deliver high-quality products and
+                                services, but to do so in a timely fashion.</p>
 
-                            With regards to the technical requirements of this position, I recently completed Flatiron
-                            School’s Software Engineering program which has given me a practical application of many of
-                            the technologies and frameworks this position requires including Python, JavaScript,
-                            Postgres, Django and many others.
+                            <p> With regards to the technical requirements of this position, I recently completed
+                                Flatiron School’s Software Engineering program which has given me a practical
+                                application of many of the technologies and frameworks this position requires including
+                                Python, JavaScript, Postgres, Django, HTML, CSS, and many others.</p>
 
-                            I’d welcome the opportunity to talk with you about the work you’re doing
-                            at {this.props.company.company_name} and how I can add value to your team.
-                            I’m available for an introductory call or meeting and would be happy to work
-                            around your schedule.
+                            <p> I’d welcome the opportunity to talk with you about the work you’re doing at
+                                {this.props.company.company_name} and how I can add value to your team. I’m available
+                                for an introductory call or meeting and would be happy to work around your schedule.</p>
 
-                            Thank you in advance for your time.
+                            <p> Thank you in advance for your time.</p>
 
-                            Ben Garlock
-
+                            <p> Ben Garlock </p>
                         </div>
                     </>
                     )

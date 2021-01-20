@@ -8,12 +8,13 @@
 }
 
 #root {
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     background-color: darkgray;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #menu-content-wrapper {
     display: flex;
+
 }

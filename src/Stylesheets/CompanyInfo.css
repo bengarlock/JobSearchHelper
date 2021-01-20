@@ -12,17 +12,15 @@ input {
     flex-wrap: wrap;
 }
 
-#doc-wrapper {
+.doc-wrapper {
     display: flex;
     flex-direction: column;
 }
 
 .doc-link {
     margin: 4px;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em;
     background-color: #357c7c;
-
     text-align: center;
     color: white;
     user-select: none;
