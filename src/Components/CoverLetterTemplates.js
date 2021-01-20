@@ -9,6 +9,11 @@ class CoverLetterTemplates extends React.Component {
         value: "Copy",
     }
 
+    renderTechText = () => {
+        const text = this.props.company.technologies.join(", ")
+        return text
+    }
+
     render() {
 
         return(
@@ -53,14 +58,16 @@ class CoverLetterTemplates extends React.Component {
                                 confident this experience can provide an excellent value to {this.props.company.company_name}.
                             </p>
                             <p>
-                                On the technical side, I've recently became certified in Software Engineering at
-                                Flatiron School and I'm very comfortable with APIs, JSON, and webhooks. You're welcome to
+                                On the technical side, I've hold certification in Software Engineering from Flatiron School
+                                and I'm very comfortable with {this.renderTechText()}, and many others. You're welcome to
                                 see a some of the projects I've worked on at <a href="https://bengarlock.com" target="_blank">
                                 https://bengarlock.com</a>
                             </p>
                             <p>
                                 Thank you for your time, and I look forward to speaking with you.
                             </p>
+                            <p> Ben Garlock </p>
+
                         </div>
                         <div className="doc-wrapper">
                             <h3>Software Engineer</h3>
@@ -78,13 +85,13 @@ class CoverLetterTemplates extends React.Component {
                                 customers and using collaboration to not only deliver high-quality products and
                                 services, but to do so in a timely fashion.</p>
 
-                            <p> With regards to the technical requirements of this position, I recently completed
-                                Flatiron School’s Software Engineering program which has given me a practical
-                                application of many of the technologies and frameworks this position requires including
-                                Python, JavaScript, Postgres, Django, HTML, CSS, and many others.</p>
+                            <p> With regards to the technical requirements of this position, I'm certified in
+                                Software Engineering from Flatiron School which has given me a practical
+                                application of many of the technologies and frameworks this position requires
+                                including {this.renderTechText()}.</p>
 
-                            <p> I’d welcome the opportunity to talk with you about the work you’re doing at
-                                {this.props.company.company_name} and how I can add value to your team. I’m available
+                            <p> I’d welcome the opportunity to talk with you about the work you’re doing
+                                at {this.props.company.company_name} and how I can add value to your team. I’m available
                                 for an introductory call or meeting and would be happy to work around your schedule.</p>
 
                             <p> Thank you in advance for your time.</p>

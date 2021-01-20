@@ -21,7 +21,6 @@ class App extends React.Component {
     }
 
     updateTechnologies = (tech, status) => {
-        console.log(tech, status)
         if (status) {
             let newArray = [...this.state.technologies]
             newArray.push(tech)
@@ -48,7 +47,6 @@ class App extends React.Component {
 
 
     render() {
-        console.log(this.state.technologies)
         return (
             <>
                 <Header company={this.state}/>
