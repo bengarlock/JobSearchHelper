@@ -15,6 +15,7 @@ input {
 .doc-wrapper {
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .doc-link {
