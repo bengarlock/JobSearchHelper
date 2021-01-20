@@ -36,6 +36,8 @@ class SocialLinks extends React.Component {
                 + this.props.company.job_title + "\t"
                 + "Applied" + "\t"
                 + this.props.company.url)
+        } else if (e.target.id === "job-tracker-link") {
+            window.open("https://docs.google.com/spreadsheets/d/1NWsGKRt_ffM1FUEJztA5m5rytPTg6fKWvRd7Ua9wFI8/edit#gid=0")
         }
     }
 
@@ -54,7 +56,10 @@ class SocialLinks extends React.Component {
 
                 <h3>Shortcuts</h3>
                 <div className='social-link' id="job-tracker-template"
-                     onClick={this.onClickHandler}>{dateFormatted}</div>
+                     onClick={this.onClickHandler}>Data Entry</div>
+                <div className='social-link' id="job-tracker-link"
+                     onClick={this.onClickHandler}>Job Tracker</div>
+
 
                 <h3>Resume Breakdown</h3>
                 <div className='social-link' id="account-manager-title"

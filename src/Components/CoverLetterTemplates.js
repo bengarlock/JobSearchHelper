@@ -94,7 +94,7 @@ class CoverLetterTemplates extends React.Component {
 
                                 With regards to the technical requirements of this position, I'm certified in Software
                                 Engineering from Flatiron School and I hold a Bachelor of Science in Network
-                                Engineering.  I also have a practical understanding of many of the technologies and
+                                Engineering.  I also have a good deal of experience in many of the technologies and
                                 frameworks this position requires including {this.renderTechText()} and
                                 many more.  A portfolio of my work is available
                                 at <a href="https://www.bengarlock.com">https://www.bengarlock.com</a>.
@@ -104,6 +104,8 @@ class CoverLetterTemplates extends React.Component {
                                 I’d welcome the opportunity to talk with you about the work you’re doing
                                 at {this.props.company.company_name} and how I can add value to your team. I’m available
                                 for an introductory call or meeting and would be happy to work around your schedule.
+
+                                <br /><br />
 
                                 Thank you in advance for your time.
 
