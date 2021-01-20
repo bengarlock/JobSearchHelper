@@ -53,7 +53,7 @@ class Content extends React.Component {
     }
 
     renderTechnology = () => {
-        let technologies = ["JavaScript", "HTML", "Python", "Ruby on Rails", "Postgres", "MySQL"]
+        let technologies = ["JavaScript", "HTML", "Python", "Ruby on Rails", "Postgres", "MySQL", "CSS"]
         return (
             <>
                 <h3>Required Technologies - {this.props.company.technologies}</h3>
