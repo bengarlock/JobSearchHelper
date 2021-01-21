@@ -43,7 +43,7 @@ class Content extends React.Component {
             method: "POST",
             headers: {
                 "content-type": "application/json",
-                "accepts": "application/json",
+                "accept": "application/json",
             },
             body: JSON.stringify(data)
         }
