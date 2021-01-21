@@ -1,0 +1,16 @@
+#app-item-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.app-item {
+    background-color: white;
+    margin: 4px;
+    flex: 1 1;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    -webkit-user-select: none;
+    user-select: none;
+}

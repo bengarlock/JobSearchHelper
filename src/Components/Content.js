@@ -3,6 +3,7 @@ import CompanyInfo from "./CompanyInfo";
 import "../Stylesheets/Content.css"
 import CoverLetterTemplates from "./CoverLetterTemplates";
 import SocialLinks from "./SocialLinks";
+import Applications from "./Applications";
 
 class Content extends React.Component {
 
@@ -22,6 +23,9 @@ class Content extends React.Component {
 
                 {this.props.currentPage === "social-links" ? <SocialLinks
                     company={this.props.company}/> : null}
+
+                {this.props.currentPage === "applications" ? <Applications
+                    applications={this.props.company.applications}/> : null}
             </>
         )
     }

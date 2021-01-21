@@ -1,4 +1,4 @@
-#content-wrapper {
+.content-wrapper {
     flex: 4;
     background-color: lightgray;
 }

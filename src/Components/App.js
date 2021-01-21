@@ -14,7 +14,17 @@ class App extends React.Component {
         job_title: '',
         url: '',
         technologies: [],
+        applications: []
     }
+
+    componentDidMount() {
+        fetch(backendUrl + "jobapps/")
+            .then(res => res.json())
+            .then(applications => this.setState({
+                applications: applications
+            }))
+    }
+
 
     togglePage = (page) => {
         this.setState(this.setState({
@@ -41,6 +51,7 @@ class App extends React.Component {
 
     setCompany = (company) => {
         this.setState({
+            id: company.id,
             company_name: company.company_name,
             job_title: company.job_title,
             url: company.url,

@@ -49,7 +49,6 @@ class Content extends React.Component {
         fetch(this.props.backendUrl + "jobapps/", packet)
             .then(res => res.json())
             .then(company => this.props.setCompany(company))
-            .then(console.log)
     }
 
     renderDocs = () => {
@@ -86,7 +85,7 @@ class Content extends React.Component {
 
     render() {
         return(
-            <div id="content-wrapper">
+            <div className="content-wrapper">
                 <h3>Company Info</h3>
                 <form id="company-form" onSubmit={this.onSubmitHandler}>
                     <input name="company-name"

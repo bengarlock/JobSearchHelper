@@ -16,17 +16,25 @@ class Menu extends React.Component {
                     <li className={this.props.currentPage === "company-info" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
-                        id="company-info">Company Info</li>
+                        id="company-info">Company Info
+                    </li>
 
                     <li className={this.props.currentPage === "cover-letter" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
-                        id="cover-letter">Cover Letter Templates</li>
+                        id="cover-letter">Cover Letter Templates
+                    </li>
 
                     <li className={this.props.currentPage === "social-links" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
-                        id="social-links">Social Links</li>
+                        id="social-links">Social Links
+                    </li>
+                    <li className={this.props.currentPage === "applications" ?
+                        "menu-item-selected" : "menu-item"}
+                        onClick={this.pageToggle}
+                        id="applications">Applications
+                    </li>
                 </ul>
             </div>
         )

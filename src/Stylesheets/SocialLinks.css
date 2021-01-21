@@ -20,3 +20,14 @@
     background-color: #266e6e;
     transition: .5s;
 }
+
+.social-link-selected {
+    margin: 4px;
+    flex: 1;
+    background-color: #266e6e;
+    transition: .5s;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: white;
+    text-align: center;
+}

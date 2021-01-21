@@ -17,7 +17,7 @@ class CoverLetterTemplates extends React.Component {
     render() {
 
         return(
-            <div id="content-wrapper">
+            <div className="content-wrapper">
 
                 {this.props.company.company_name ? (
 
