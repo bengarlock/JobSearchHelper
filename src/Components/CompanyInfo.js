@@ -29,8 +29,6 @@ class Content extends React.Component {
 
     onSubmitHandler = (e) => {
         e.preventDefault()
-        this.props.setCompany(this.state)
-
         const data = {
             company_name: this.state.company_name,
             job_title: this.state.job_title,
@@ -50,6 +48,7 @@ class Content extends React.Component {
 
         fetch(this.props.backendUrl + "jobapps/", packet)
             .then(res => res.json())
+            .then(company => this.props.setCompany(company))
             .then(console.log)
     }
 
