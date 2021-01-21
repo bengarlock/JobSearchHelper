@@ -14,7 +14,8 @@ class Content extends React.Component {
                     currentPage={this.props.currentPage}
                     setCompany={this.props.setCompany}
                     company={this.props.company}
-                    updateTechnologies={this.props.updateTechnologies}/> : null}
+                    updateTechnologies={this.props.updateTechnologies}
+                    backendUrl={this.props.backendUrl}/> : null}
 
                 {this.props.currentPage === "cover-letter" ? <CoverLetterTemplates
                     company={this.props.company}/> : null}

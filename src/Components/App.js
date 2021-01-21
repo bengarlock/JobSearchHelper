@@ -4,6 +4,8 @@ import Menu from "./Menu";
 import Content from "./Content";
 import React from 'react'
 
+const backendUrl = "https://www.bengarlock.com:8080/"
+
 class App extends React.Component {
 
     state = {
@@ -11,7 +13,7 @@ class App extends React.Component {
         company_name: '',
         job_title: '',
         url: '',
-        technologies: []
+        technologies: [],
     }
 
     togglePage = (page) => {
@@ -56,7 +58,8 @@ class App extends React.Component {
                     <Content currentPage={this.state.current_page}
                              setCompany={this.setCompany}
                              company={this.state}
-                             updateTechnologies={this.updateTechnologies}/>
+                             updateTechnologies={this.updateTechnologies}
+                             backendUrl={backendUrl}/>
                 </div>
 
             </>

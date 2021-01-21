@@ -30,11 +30,27 @@ class Content extends React.Component {
     onSubmitHandler = (e) => {
         e.preventDefault()
         this.props.setCompany(this.state)
-        // this.setState({
-        //     company_name: '',
-        //     job_title: '',
-        //     url: '',
-        // })
+
+        const data = {
+            company_name: this.state.company_name,
+            job_title: this.state.job_title,
+            url: this.state.url,
+            technologies: this.props.company.technologies,
+            status: "Applied",
+        }
+
+        const packet = {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accepts": "application/json",
+            },
+            body: JSON.stringify(data)
+        }
+
+        fetch(this.props.backendUrl + "jobapps/", packet)
+            .then(res => res.json())
+            .then(console.log)
     }
 
     renderDocs = () => {
