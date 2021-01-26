@@ -10,7 +10,6 @@ class Applications extends React.Component {
     }
 
     toggleApplication = (applicationId) => {
-
         this.setState({
             current_application: applicationId
         })
@@ -39,6 +38,8 @@ class Applications extends React.Component {
                     <div id="application-form-wrapper">
                         {this.state.current_application ?
                             <ApplicationInfo
+                                renderApplications={this.renderApplications}
+                                backendUrl={this.props.backendUrl}
                                 application={this.props.applications.find(
                                     item=> item.id === this.state.current_application
                                 )}/> : null

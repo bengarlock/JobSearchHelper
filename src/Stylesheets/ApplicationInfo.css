@@ -14,3 +14,19 @@
     -webkit-user-select: none;
     user-select: none;
 }
+
+.delete {
+    background-color: red;
+    margin: 4px;
+    flex: 1 1;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    -webkit-user-select: none;
+    user-select: none;
+
+}
+.delete:hover {
+    background-color: darkred;
+    transition: .5s;
+}

@@ -9,6 +9,23 @@ class ApplicationInfo extends React.Component {
         job_title: '',
     }
 
+    onClickHandler = (e) => {
+        const url = this.props.backendUrl + "jobapps/" + this.props.application.id + "/"
+        const packet = {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json",
+                "accepts": "application/json"
+            }
+        }
+
+        if (e.target.className === "delete") {
+            fetch(url, packet)
+                .then(res => res.json())
+                .then(this.props.renderApplications())
+        }
+    }
+
 
     render() {
         return(
@@ -29,6 +46,9 @@ class ApplicationInfo extends React.Component {
                     </div>
                     <div className="app-item">
                         {this.props.application.status}
+                    </div>
+                    <div className="delete" onClick={this.onClickHandler}>
+                        DELETE
                     </div>
                 </div>
 

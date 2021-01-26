@@ -26,6 +26,7 @@ class Content extends React.Component {
                     company={this.props.company}/> : null}
 
                 {this.props.currentPage === "applications" ? <Applications
+                    backendUrl={this.props.backendUrl}
                     applications={this.props.company.applications}/> : null}
             </>
         )
