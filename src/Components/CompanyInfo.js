@@ -151,8 +151,6 @@ class Content extends React.Component {
                 <div id="doc-wrapper">
                     {this.props.company.company_name ? this.renderDocs() : null}
                 </div>
-
-
             </div>
         )
     }

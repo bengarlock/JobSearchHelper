@@ -122,7 +122,6 @@ class CoverLetterTemplates extends React.Component {
     }
 
     cleanMe = (object) => {
-        console.log(object)
         if (object) {
             object = object.replace("{contact}", this.props.company.contact)
             object = object.replace("{job_title}", this.props.company.job_title)
@@ -175,6 +174,16 @@ class CoverLetterTemplates extends React.Component {
                                 <h3>Closings</h3>
                                 {this.renderClosing()}
                             </div>
+                            <div className="doc-wrapper" id="doc-download">
+                                <a href={coverLetter}
+                                   className="doc-link"
+                                   download={"Ben Garlock - "
+                                   + `${this.props.company.company_name}`
+                                   + " - "
+                                   + `${this.props.company.job_title}`
+                                   + " - Cover Letter.docx"}>Cover Letter Template</a>
+
+                            </div>
 
                         </div>
                         <div className="doc-wrapper" id="cover-letter-content">
@@ -186,16 +195,7 @@ class CoverLetterTemplates extends React.Component {
                     )
                 : null}
 
-                <div>
-                    <a href={coverLetter}
-                       className="doc-link"
-                       download={"Ben Garlock - "
-                       + `${this.props.company.company_name}`
-                       + " - "
-                       + `${this.props.company.job_title}`
-                       + " - Cover Letter.docx"}>Cover Letter Template</a>
 
-                </div>
 
             </div>
         )
