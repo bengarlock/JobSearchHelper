@@ -1,6 +1,7 @@
 import React from "react"
 import "../Stylesheets/CompanyInfo.css"
-import resume from "../Media/Resume - Ben Garlock.pdf"
+import fullstackresume from "../Media/Resume - Full Stack Developer - v3 - Final.pdf"
+import salesengineerresume from "../Media/Resume - Solutions Engineer - v3 - Final.pdf"
 import TechButton from "../Cards/TechButton";
 
 class Content extends React.Component {
@@ -28,7 +29,6 @@ class Content extends React.Component {
                     applied_before: false
                 })
             }
-
             this.setState({
                 company_name: e.target.value
             })
@@ -76,13 +76,20 @@ class Content extends React.Component {
         return (
             <div className="doc-wrapper">
                 <h3>Documents</h3>
-                <a href={resume}
+                <a href={fullstackresume}
                    className="doc-link"
                    download={"Ben Garlock - "
                    + `${this.props.company.company_name}`
                    + " - "
                    + `${this.props.company.job_title}`
-                   + ".pdf"}>Resume</a>
+                   + ".pdf"}>Resume - Full Stack Engineer</a>
+                <a href={salesengineerresume}
+                   className="doc-link"
+                   download={"Ben Garlock - "
+                   + `${this.props.company.company_name}`
+                   + " - "
+                   + `${this.props.company.job_title}`
+                   + ".pdf"}>Resume - Sales Engineer</a>
             </div>
         )
     }
