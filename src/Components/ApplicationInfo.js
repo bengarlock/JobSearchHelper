@@ -11,17 +11,17 @@ class ApplicationInfo extends React.Component {
 
     onClickHandler = (e) => {
         const url = this.props.backendUrl + "jobapps/" + this.props.application.id + "/"
+        console.log(url)
         const packet = {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",
-                "accept": "application/json"
+                "accept": "application/json",
             }
         }
 
         if (e.target.className === "delete") {
             fetch(url, packet)
-                .then(res => res.json())
                 .then(this.props.renderApplications())
         }
     }

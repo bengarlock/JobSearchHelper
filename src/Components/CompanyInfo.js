@@ -82,14 +82,14 @@ class Content extends React.Component {
                    + `${this.props.company.company_name}`
                    + " - "
                    + `${this.props.company.job_title}`
-                   + ".pdf"}>Resume - Full Stack Engineer</a>
+                   + " - Resume.pdf"}>Resume - Full Stack Engineer</a>
                 <a href={salesengineerresume}
                    className="doc-link"
                    download={"Ben Garlock - "
                    + `${this.props.company.company_name}`
                    + " - "
                    + `${this.props.company.job_title}`
-                   + ".pdf"}>Resume - Sales Engineer</a>
+                   + " - Resume.pdf"}>Resume - Sales Engineer</a>
             </div>
         )
     }
@@ -97,10 +97,10 @@ class Content extends React.Component {
     renderTechnology = () => {
         let technologies = [
             "JavaScript", "HTML", "CSS", "Python", "Ruby on Rails", "Postgres", "MySQL",
-            "React.js", "SQL", "APIs", "Redux"]
+            "React.js", "SQL", "APIs", "Redux", "Django"]
         return (
             <>
-                <h3>Required Technologies - {this.props.company.technologies}</h3>
+                <h3>Required Technologies - {this.props.company.technologies.join(", ")}</h3>
                 <div id="tech-wrapper">
                     {technologies.map(tech => <TechButton
                         key={technologies.indexOf(tech)}
