@@ -10,10 +10,25 @@ class Content extends React.Component {
         job_title: '',
         contact: '',
         url: '',
+        applied_before: false,
     }
 
     onChangeHandler = (e) => {
         if (e.target.name === "company-name") {
+            let company = e.target.value
+            let check = this.props.company.applications.find(item =>
+                item.company_name.toLowerCase() === company.toLowerCase()
+            )
+            if (check) {
+                this.setState({
+                    applied_before: true
+                })
+            } else {
+                this.setState({
+                    applied_before: false
+                })
+            }
+
             this.setState({
                 company_name: e.target.value
             })
@@ -100,6 +115,7 @@ class Content extends React.Component {
                            placeholder="Company Name"
                            autoComplete="off"/>
                            <br />
+                           <div>{this.state.applied_before ? <p>You may have applied here before</p> : null}</div>
                     <input name="job-title"
                            onChange={this.onChangeHandler}
                            value={this.state.job_title}

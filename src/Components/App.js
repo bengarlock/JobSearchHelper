@@ -51,7 +51,6 @@ class App extends React.Component {
     }
 
     setCompany = (company) => {
-        console.log(company)
         this.setState({
             id: company.id,
             company_name: company.company_name,
