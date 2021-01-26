@@ -8,6 +8,7 @@ class Content extends React.Component {
     state = {
         company_name: '',
         job_title: '',
+        contact: '',
         url: '',
     }
 
@@ -19,6 +20,10 @@ class Content extends React.Component {
         } else if (e.target.name === "job-title") {
             this.setState({
                 job_title: e.target.value
+            })
+        } else if (e.target.name === "contact") {
+            this.setState({
+                contact: e.target.value
             })
         } else if (e.target.name === "url") {
             this.setState({
@@ -35,6 +40,7 @@ class Content extends React.Component {
             url: this.state.url,
             technologies: this.props.company.technologies,
             status: "Applied",
+            contact: this.state.contact,
         }
 
         const packet = {
@@ -100,6 +106,12 @@ class Content extends React.Component {
                            placeholder="Job Title"
                            autoComplete="off"/>
                            <br />
+                    <input name="contact"
+                           onChange={this.onChangeHandler}
+                           value={this.state.contact}
+                           placeholder="Contact"
+                           autoComplete="off"/>
+                    <br />
                     <input name="url"
                            onChange={this.onChangeHandler}
                            value={this.state.url}

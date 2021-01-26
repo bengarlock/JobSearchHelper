@@ -17,3 +17,16 @@ button {
 .template-wrapper {
     background-color: white;
 }
+
+.content-wrapper#cover-letter-generator{
+    display: flex;
+    flex-direction: row;
+}
+
+.template-sub-wrapper {
+    flex: 1;
+}
+
+#cover-letter-content {
+    flex: 4;
+}

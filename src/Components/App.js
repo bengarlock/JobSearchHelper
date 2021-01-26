@@ -14,7 +14,8 @@ class App extends React.Component {
         job_title: '',
         url: '',
         technologies: [],
-        applications: []
+        applications: [],
+        contact: '',
     }
 
     componentDidMount() {
@@ -50,11 +51,13 @@ class App extends React.Component {
     }
 
     setCompany = (company) => {
+        console.log(company)
         this.setState({
             id: company.id,
             company_name: company.company_name,
             job_title: company.job_title,
             url: company.url,
+            contact: company.contact,
         })
     }
 

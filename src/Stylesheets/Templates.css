@@ -1,0 +1,12 @@
+.template-item {
+    background-color: #666767;
+    color: white;
+    padding: 1em;
+}
+
+.template-item-selected {
+    background-color: #225d5d;
+    color: white;
+    padding: 1em;
+
+}

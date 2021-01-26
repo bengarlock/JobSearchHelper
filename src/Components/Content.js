@@ -19,6 +19,7 @@ class Content extends React.Component {
                     backendUrl={this.props.backendUrl}/> : null}
 
                 {this.props.currentPage === "cover-letter" ? <CoverLetterTemplates
+                    backendUrl={this.props.backendUrl}
                     company={this.props.company}/> : null}
 
                 {this.props.currentPage === "social-links" ? <SocialLinks
