@@ -29,4 +29,9 @@ button {
 
 #cover-letter-content {
     flex: 4;
+    font-size: 12pt;
+}
+
+#letter-text {
+    padding: 1em;
 }
