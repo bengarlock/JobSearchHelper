@@ -15,7 +15,7 @@ class ApplicationInfo extends React.Component {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",
-                "accepts": "application/json"
+                "accept": "application/json"
             }
         }
 
