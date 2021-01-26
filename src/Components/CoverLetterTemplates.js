@@ -1,8 +1,9 @@
 import React from "react"
 import "../Stylesheets/CoverLetterTemplate.css"
 import coverLetter from "../Media/Cover Letter - Template.docx"
-import resume from "../Media/Resume - Ben Garlock.pdf";
 import Template from "../Cards/Template";
+import ReactHtmlParser from 'react-html-parser';
+
 
 class CoverLetterTemplates extends React.Component {
 
@@ -12,8 +13,8 @@ class CoverLetterTemplates extends React.Component {
             header: '',
             greeting: '{Greeting}',
             opening: '{Opening}',
-            body: '{Opening}',
-            closing: '{Opening}',
+            body: [],
+            closing: '{closing}',
         },
         templates: [],
     }
@@ -32,15 +33,42 @@ class CoverLetterTemplates extends React.Component {
                 letter: {
                     greeting: template.body,
                     opening: this.state.letter.opening,
+                    body: this.state.letter.body,
                 }
             })
         } else if (template.type === "opening") {
             this.setState({
                 letter: {
                     greeting: this.state.letter.greeting,
-                    opening: template.body
+                    opening: template.body,
+                    body: this.state.letter.body
                 }
             })
+        } else if (template.type === "asset") {
+
+            if (this.state.letter.body.includes(template.body)) {
+                let currentBody = [...this.state.letter.body]
+                currentBody = currentBody.filter(v => v !== template.body)
+
+                this.setState({
+                    letter: {
+                        greeting: this.state.letter.greeting,
+                        opening: this.state.letter.opening,
+                        body: currentBody,
+                    }
+                })
+            } else {
+                let currentBody = [...this.state.letter.body]
+                currentBody.push(template.body)
+                this.setState({
+                    letter: {
+                        greeting: this.state.letter.greeting,
+                        opening: this.state.letter.opening,
+                        body: currentBody,
+                    }
+                })
+            }
+
         }
     }
 
@@ -62,37 +90,51 @@ class CoverLetterTemplates extends React.Component {
                       currentTemplate={this.state.currentTemplate}/>)
     }
 
+    renderAssetModules = () => {
+
+        const assets = this.state.templates.filter(item => item.type === "asset")
+        return assets.map(template =>
+            <Template key={template.id}
+                      template={template}
+                      toggleTemplate={this.toggleTemplate}
+                      currentTempalte={this.state.currentTemplate} />)
+    }
+
     cleanMe = (object) => {
+
         if (object) {
             object = object.replace("{contact}", this.props.company.contact)
             object = object.replace("{job_title}", this.props.company.job_title)
             object = object.replace("{company_name}", this.props.company.company_name)
+            object = object.replace("{b}", "<b>")
+            object = object.replace("{/b}", "</b>")
             return object
         }
-
     }
 
 
     renderCoverLetter = () => {
         let greeting = this.cleanMe(this.state.letter.greeting)
         let opening = this.cleanMe(this.state.letter.opening)
-        let body = this.cleanMe(this.state.letter.body)
-
+        let body = this.state.letter.body.map(item => this.cleanMe(item))
 
         return (
             <>
                 <p>
-                    {greeting}
+                    {ReactHtmlParser(greeting)}
                     <br /><br />
-                    {opening}
+                    {ReactHtmlParser(opening)}
+                    <br /><br />
+
+                    {body ? ReactHtmlParser(body.join("")) : null}
                 </p>
             </>
         )
+
     }
 
     render() {
-        console.log(this.props.company)
-
+        console.log(this.state.letter.body)
         return(
             <div className="content-wrapper" id="cover-letter-generator">
 
@@ -105,6 +147,8 @@ class CoverLetterTemplates extends React.Component {
                                 {this.renderGreetings()}
                                 <h3>Openings</h3>
                                 {this.renderOpenings()}
+                                <h3>Assets</h3>
+                                {this.renderAssetModules()}
                             </div>
 
                         </div>
@@ -116,6 +160,17 @@ class CoverLetterTemplates extends React.Component {
                     </>
                     )
                 : null}
+
+                <div>
+                    <a href={coverLetter}
+                       className="doc-link"
+                       download={"Ben Garlock - "
+                       + `${this.props.company.company_name}`
+                       + " - "
+                       + `${this.props.company.job_title}`
+                       + " - Cover Letter.docx"}>Cover Letter Template</a>
+
+                </div>
 
             </div>
         )
