@@ -12,6 +12,7 @@ class Content extends React.Component {
         return(
             <>
                 {this.props.currentPage === "company-info" ? <CompanyInfo
+                    updateApplications={this.props.updateApplications}
                     currentPage={this.props.currentPage}
                     setCompany={this.props.setCompany}
                     company={this.props.company}
@@ -26,6 +27,7 @@ class Content extends React.Component {
                     company={this.props.company}/> : null}
 
                 {this.props.currentPage === "applications" ? <Applications
+                    updateApplications={this.props.updateApplications}
                     backendUrl={this.props.backendUrl}
                     applications={this.props.company.applications}/> : null}
             </>

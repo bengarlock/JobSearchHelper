@@ -33,13 +33,14 @@ class Applications extends React.Component {
 
                     <div id="application-list-wrapper">
                         <h3>Applications</h3>
-
                         {this.renderApplications()}
                     </div>
                     <div id="application-form-wrapper">
                         {this.state.current_application ?
                             <ApplicationInfo
                                 renderApplications={this.renderApplications}
+                                updateApplications={this.props.updateApplications}
+                                toggleApplication={this.toggleApplication}
                                 backendUrl={this.props.backendUrl}
                                 application={this.props.applications.find(
                                     item=> item.id === this.state.current_application

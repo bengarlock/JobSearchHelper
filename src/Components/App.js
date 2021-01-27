@@ -50,7 +50,24 @@ class App extends React.Component {
         }
     }
 
+    updateApplications = (application, action) => {
+        if (action === "remove") {
+            let newApplications = [...this.state.applications]
+            let updatedApplications = newApplications.filter(item => item.id !== application.id)
+            this.setState({
+                applications: updatedApplications
+            })
+        } else if (action === "add") {
+            let newApplications = [...this.state.applications, application]
+            this.setState({
+                applications: newApplications
+            })
+        }
+    }
+
     setCompany = (company) => {
+        this.updateApplications(company, "add")
+
         this.setState({
             id: company.id,
             company_name: company.company_name,
@@ -72,6 +89,7 @@ class App extends React.Component {
                              setCompany={this.setCompany}
                              company={this.state}
                              updateTechnologies={this.updateTechnologies}
+                             updateApplications={this.updateApplications}
                              backendUrl={backendUrl}/>
                 </div>
 
