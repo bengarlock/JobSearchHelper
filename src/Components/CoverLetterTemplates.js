@@ -5,6 +5,10 @@ import Template from "../Cards/Template";
 import ReactHtmlParser from 'react-html-parser';
 
 
+import Document from 'docx'
+import { saveAs } from "file-saver";
+
+
 class CoverLetterTemplates extends React.Component {
 
     state = {
@@ -132,12 +136,45 @@ class CoverLetterTemplates extends React.Component {
         }
     }
 
-
     renderCoverLetter = () => {
         let greeting = this.cleanMe(this.state.letter.greeting)
         let opening = this.cleanMe(this.state.letter.opening)
         let body = this.state.letter.body.map(item => this.cleanMe(item))
         let closing = this.cleanMe(this.state.letter.closing)
+
+
+        // const doc = new Document()
+        // doc.addSection({
+        //     properties: {},
+        //     children: [
+        //         new doc.Paragraph({
+        //             children: [
+        //                 new doc.TextRun(greeting),
+        //             ]
+        //
+        //         }),
+        //         new doc.Paragraph({
+        //             children: [
+        //                 new doc.TextRun(opening),
+        //             ]
+        //
+        //         }),
+        //         new doc.Paragraph({
+        //             children: [
+        //                 new doc.TextRun(body),
+        //             ]
+        //
+        //         })
+        //     ]
+        // })
+        // doc.Packer.toBlob(doc).then(blob => {
+        //     console.log(blob)
+        //     saveAs(blob, "test.docx")
+        //     console.log("finished")
+        // })
+
+
+
 
 
         return (
@@ -181,8 +218,8 @@ class CoverLetterTemplates extends React.Component {
                                    + `${this.props.company.company_name}`
                                    + " - "
                                    + `${this.props.company.job_title}`
-                                   + " - Cover Letter.docx"}>Cover Letter Template</a>
-
+                                   + " - Cover Letter.docx"}>Cover Letter Template
+                                </a>
                             </div>
 
                         </div>
@@ -190,13 +227,9 @@ class CoverLetterTemplates extends React.Component {
                             <h3>Cover Letter</h3>
                             {this.renderCoverLetter()}
                         </div>
-
                     </>
                     )
                 : null}
-
-
-
             </div>
         )
     }
