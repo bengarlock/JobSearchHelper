@@ -3,12 +3,15 @@
 }
 
 
+
 #application-list-wrapper {
-    width: 100%;
     flex: 1;
-
-
+    overflow-y: auto;
+    height: 90vh;
 }
+
+
+
 
 #application-form-wrapper {
     flex: 2;

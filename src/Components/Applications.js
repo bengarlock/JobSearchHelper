@@ -33,6 +33,7 @@ class Applications extends React.Component {
 
                     <div id="application-list-wrapper">
                         <h3>Applications</h3>
+
                         {this.renderApplications()}
                     </div>
                     <div id="application-form-wrapper">
