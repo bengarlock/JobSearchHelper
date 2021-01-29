@@ -3,10 +3,8 @@ import "../Stylesheets/CoverLetterTemplate.css"
 import coverLetter from "../Media/Cover Letter - Template.docx"
 import Template from "../Cards/Template";
 import ReactHtmlParser from 'react-html-parser';
-
-
-import Document from 'docx'
-import { saveAs } from "file-saver";
+import ReactToPrint from "react-to-print";
+import PrintCoverLetter from "./CoverLetterPrint";
 
 
 class CoverLetterTemplates extends React.Component {
@@ -142,55 +140,15 @@ class CoverLetterTemplates extends React.Component {
         let body = this.state.letter.body.map(item => this.cleanMe(item))
         let closing = this.cleanMe(this.state.letter.closing)
 
-
-        // const doc = new Document()
-        // doc.addSection({
-        //     properties: {},
-        //     children: [
-        //         new doc.Paragraph({
-        //             children: [
-        //                 new doc.TextRun(greeting),
-        //             ]
-        //
-        //         }),
-        //         new doc.Paragraph({
-        //             children: [
-        //                 new doc.TextRun(opening),
-        //             ]
-        //
-        //         }),
-        //         new doc.Paragraph({
-        //             children: [
-        //                 new doc.TextRun(body),
-        //             ]
-        //
-        //         })
-        //     ]
-        // })
-        // doc.Packer.toBlob(doc).then(blob => {
-        //     console.log(blob)
-        //     saveAs(blob, "test.docx")
-        //     console.log("finished")
-        // })
-
-
-
-
-
         return (
-            <>
-                <div id="letter-text">
-                    {ReactHtmlParser(greeting)}
-                    <br /><br />
-                    {ReactHtmlParser(opening)}
-                    <br /><br />
-                    {this.state.letter.body[0] ? ReactHtmlParser(body.join("")) : null}
-
-                    {ReactHtmlParser(closing)}
-                </div>
-            </>
+            <PrintCoverLetter
+                greeting={greeting}
+                opening={opening}
+                body={body}
+                closing={closing}
+                company_name={this.props.company.company_name}
+                jobTitle={this.props.company.job_title}/>
         )
-
     }
 
     render() {

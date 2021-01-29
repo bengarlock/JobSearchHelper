@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
+
+#letter-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 5em;
+}
+
+
+a {
+    padding-left: 4px;
+    padding-right: 4px;
+    color: blue;
+}
+
+a:visited {
+    color: blue;
+}
+
+#line-separator {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+#job-title-header {
+
+    color: #18518d;
+}
