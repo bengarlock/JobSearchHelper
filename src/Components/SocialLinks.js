@@ -1,14 +1,20 @@
 import React from "react"
 import "../Stylesheets/SocialLinks.css"
+import Job from "../Cards/Job";
 
 const date = new Date()
 const dateFormatted = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()
-
+const jobTitles = [
+    "QA Engineer", "Developer Relations", "Developer advocacy", "Developer Evangelist",
+    "Technical solutions engineer", "Creative developer", "Technical writer",
+    "Implementation Specialist", "Creative developer", "Deployment engineer", "Technical service support",
+    "Support Engineer", "Integration Specialist", "Customer Success Manager", "Tech Support Engineer",
+    "Sales Engineer", "Technical Project Manager", "Solutions Engineer", "Customer Success Engineer",
+    "DevOps Engineer", "Success Engineer"
+]
 
 
 class SocialLinks extends React.Component {
-
-
 
     onClickHandler = (e) => {
         if (e.target.id === "linked-in") {
@@ -41,6 +47,10 @@ class SocialLinks extends React.Component {
         }
     }
 
+    renderJobTitleIdes = () => {
+        return jobTitles.map(job => <Job key={jobTitles.indexOf(job)} job={job}/>)
+    }
+
 
     render() {
         return(
@@ -61,13 +71,10 @@ class SocialLinks extends React.Component {
                      onClick={this.onClickHandler}>Job Tracker</div>
 
 
-                <h3>Resume Breakdown</h3>
-                <div className='social-link' id="account-manager-title"
-                     onClick={this.onClickHandler}>Sr. Account Manager - Title
-                </div>
-                <div className='social-link' id="account-manager-role"
-                     onClick={this.onClickHandler}>Sr. Account Manager - Role
-                </div>
+                <h3>Job Titles</h3>
+                <ul>
+                    {this.renderJobTitleIdes()}
+                </ul>
 
 
 

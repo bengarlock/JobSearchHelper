@@ -1,0 +1,10 @@
+.job {
+    user-select: none;
+    width: 200px;
+    height: 100px;
+}
+
+.job:hover {
+    background-color: #225d5d;
+    color: white;
+}
