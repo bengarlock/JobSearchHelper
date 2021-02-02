@@ -8,3 +8,10 @@
     background-color: #225d5d;
     color: white;
 }
+
+.job-selected {
+    user-select: none;
+    width: 200px;
+    height: 100px;
+    background-color: #225d5d;
+}
