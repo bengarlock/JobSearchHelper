@@ -5,10 +5,16 @@ class Job extends React.Component {
 
     onClickHandler = (e) => {
         navigator.clipboard.writeText(this.props.job)
-        const buttons = document.getElementsByClassName("job-selected")
+
+        if (document.getElementById("job-selected")) {
+
+            const oldButton = document.getElementById("job-selected")
+            console.log(oldButton)
+            oldButton.id = null
+        }
 
         const button = e.target
-        button.className = "job-selected"
+        button.id = "job-selected"
 
     }
 

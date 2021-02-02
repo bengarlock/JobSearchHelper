@@ -72,9 +72,9 @@ class SocialLinks extends React.Component {
 
 
                 <h3>Job Titles</h3>
-                <ul>
+                <div>
                     {this.renderJobTitleIdes()}
-                </ul>
+                </div>
 
 
 

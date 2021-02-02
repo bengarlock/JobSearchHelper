@@ -9,7 +9,7 @@
     color: white;
 }
 
-.job-selected {
+#job-selected {
     user-select: none;
     width: 200px;
     height: 100px;
