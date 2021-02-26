@@ -4,6 +4,7 @@ import "../Stylesheets/Content.css"
 import CoverLetterTemplates from "./CoverLetterTemplates";
 import SocialLinks from "./SocialLinks";
 import Applications from "./Applications";
+import Reset from "./Reset";
 
 class Content extends React.Component {
 
@@ -30,6 +31,9 @@ class Content extends React.Component {
                     updateApplications={this.props.updateApplications}
                     backendUrl={this.props.backendUrl}
                     applications={this.props.company.applications}/> : null}
+
+                {this.props.currentPage === "reset" ? <Reset
+                    updateApplications={this.props.updateApplications}/> : null}
             </>
         )
     }

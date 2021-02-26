@@ -35,6 +35,11 @@ class Menu extends React.Component {
                         onClick={this.pageToggle}
                         id="applications">Applications
                     </li>
+                    <li className={this.props.currentPage === "reset" ?
+                        "menu-item-selected" : "menu-item"}
+                        onClick={this.pageToggle}
+                        id="reset">Reset
+                    </li>
                 </ul>
             </div>
         )

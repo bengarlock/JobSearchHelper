@@ -28,9 +28,9 @@ class App extends React.Component {
 
 
     togglePage = (page) => {
-        this.setState(this.setState({
+        this.setState({
             current_page: page
-        }))
+        })
     }
 
     updateTechnologies = (tech, status) => {
@@ -62,6 +62,17 @@ class App extends React.Component {
             this.setState({
                 applications: newApplications
             })
+        } else if (action === "reset") {
+            const applications = [...this.state.applications]
+            this.setState({
+                current_page: '',
+                company_name: '',
+                job_title: '',
+                url: '',
+                technologies: [],
+                applications: applications,
+                contact: '',
+            })
         }
     }
 
@@ -92,7 +103,6 @@ class App extends React.Component {
                              updateApplications={this.updateApplications}
                              backendUrl={backendUrl}/>
                 </div>
-
             </>
         );
     }
