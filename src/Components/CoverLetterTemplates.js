@@ -1,8 +1,8 @@
 import React from "react"
 import "../Stylesheets/CoverLetterTemplate.css"
-import coverLetter from "../Media/Cover Letter - Template.docx"
 import Template from "../Cards/Template";
 import PrintCoverLetter from "./CoverLetterPrint";
+import ReactToPrint from "react-to-print";
 
 
 class CoverLetterTemplates extends React.Component {
@@ -167,17 +167,6 @@ class CoverLetterTemplates extends React.Component {
                                 <h3>Closings</h3>
                                 {this.renderClosing()}
                             </div>
-                            <div className="doc-wrapper" id="doc-download">
-                                <a href={coverLetter}
-                                   className="doc-link"
-                                   download={"Ben Garlock - "
-                                   + `${this.props.company.company_name}`
-                                   + " - "
-                                   + `${this.props.company.job_title}`
-                                   + " - Cover Letter.docx"}>Cover Letter Template
-                                </a>
-                            </div>
-
                         </div>
                         <div className="doc-wrapper" id="cover-letter-content">
                             <h3>Cover Letter</h3>
