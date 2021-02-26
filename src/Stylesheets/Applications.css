@@ -20,5 +20,16 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
 
+#application-search-form button {
+    outline: none;
+    margin: 0;
+    width: 100%;
+}
+
+#application-search-form button:hover {
+    background-color: #266e6e;
+    transition: .5s;
+    color: white;
 }

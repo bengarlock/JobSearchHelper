@@ -23,6 +23,7 @@ class ApplicationInfo extends React.Component {
                 .then(this.props.renderApplications())
                 .then(this.props.toggleApplication(null))
                 .then(this.props.updateApplications(this.props.application, "remove"))
+                .then(this.props.removeAppFromSearch(this.props.application))
         }
     }
 

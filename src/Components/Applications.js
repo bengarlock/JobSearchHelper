@@ -25,6 +25,16 @@ class Applications extends React.Component {
         })
     }
 
+    removeAppFromSearch = (app) => {
+        const search_applications = [...this.state.search_applications]
+        const updatedList = search_applications.filter(application => application.id !== app.id)
+        this.setState({search_applications: updatedList})
+
+        const applications = [...this.state.applications]
+        const updatedApplications = applications.filter(application => application.id !== app.id)
+        this.setState({applications: updatedApplications})
+    }
+
     renderApplications = () => {
         if (this.state.search_applications) {
             return this.state.search_applications.map(application =>
@@ -56,6 +66,11 @@ class Applications extends React.Component {
     }
 
 
+    onClickHandler = () => {
+        this.setState({search: '', search_applications: ''})
+    }
+
+
     render() {
         return(
             <>
@@ -73,13 +88,17 @@ class Applications extends React.Component {
                                     onChange={this.onChangeHandler}
                                 />
                             </form>
-                            {this.state.search ? <button>clear</button> : null}
+                            {this.state.search ? <button onClick={this.onClickHandler}>
+                                clear
+                            </button> : null}
+
                         </div>
                         {this.renderApplications()}
                     </div>
                     <div id="application-form-wrapper">
                         {this.state.current_application ?
                             <ApplicationInfo
+                                removeAppFromSearch={this.removeAppFromSearch}
                                 renderApplications={this.renderApplications}
                                 updateApplications={this.props.updateApplications}
                                 toggleApplication={this.toggleApplication}
