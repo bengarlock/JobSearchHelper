@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.be2b9a5b.chunk.css",
+    "main.js": "/static/js/main.ffd29db4.chunk.js",
+    "main.js.map": "/static/js/main.ffd29db4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ce436f15.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ce436f15.js.map",
+    "static/js/2.fb005888.chunk.js": "/static/js/2.fb005888.chunk.js",
+    "static/js/2.fb005888.chunk.js.map": "/static/js/2.fb005888.chunk.js.map",
+    "static/js/3.f63b82db.chunk.js": "/static/js/3.f63b82db.chunk.js",
+    "static/js/3.f63b82db.chunk.js.map": "/static/js/3.f63b82db.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.be2b9a5b.chunk.css.map": "/static/css/main.be2b9a5b.chunk.css.map",
+    "static/js/2.fb005888.chunk.js.LICENSE.txt": "/static/js/2.fb005888.chunk.js.LICENSE.txt",
+    "static/media/Cover Letter - Template.453625e2.docx": "/static/media/Cover Letter - Template.453625e2.docx",
+    "static/media/Resume - Customer Support Engineer - v3 - Final.f0b8d934.pdf": "/static/media/Resume - Customer Support Engineer - v3 - Final.f0b8d934.pdf",
+    "static/media/Resume - Full Stack Developer - v3 - Final.ca99ebb7.pdf": "/static/media/Resume - Full Stack Developer - v3 - Final.ca99ebb7.pdf",
+    "static/media/Resume - Solutions Engineer - v3 - Final.20a3dbab.pdf": "/static/media/Resume - Solutions Engineer - v3 - Final.20a3dbab.pdf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce436f15.js",
+    "static/js/2.fb005888.chunk.js",
+    "static/css/main.be2b9a5b.chunk.css",
+    "static/js/main.ffd29db4.chunk.js"
+  ]
+}
