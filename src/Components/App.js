@@ -18,12 +18,12 @@ class App extends React.Component {
         contact: '',
     }
 
-    componentDidMount() {
-        fetch(backendUrl + "jobapps/")
-            .then(res => res.json())
-            .then(applications => this.setState({
-                applications: applications
-            }))
+    componentDidMount = async () => {
+        const response = await fetch(backendUrl + "jobapps/")
+        const data = await response.json()
+        this.setState({
+            applications: data
+        })
     }
 
 

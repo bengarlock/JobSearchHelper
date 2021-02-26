@@ -2,8 +2,6 @@ import React from "react"
 import "../Stylesheets/CoverLetterTemplate.css"
 import Template from "../Cards/Template";
 import PrintCoverLetter from "./CoverLetterPrint";
-import ReactToPrint from "react-to-print";
-
 
 class CoverLetterTemplates extends React.Component {
 
