@@ -2,6 +2,7 @@ import React from "react"
 import "../Stylesheets/CompanyInfo.css"
 import fullstackresume from "../Media/Resume - Full Stack Developer - v3 - Final.pdf"
 import salesengineerresume from "../Media/Resume - Solutions Engineer - v3 - Final.pdf"
+import customersupportengineer from "../Media/Resume - Customer Support Engineer - v3 - Final.pdf"
 import TechButton from "../Cards/TechButton";
 
 class Content extends React.Component {
@@ -89,7 +90,14 @@ class Content extends React.Component {
                    + `${this.props.company.company_name}`
                    + " - "
                    + `${this.props.company.job_title}`
-                   + " - Resume.pdf"}>Resume - Sales Engineer</a>
+                   + " - Resume.pdf"}>Resume - Solutions Engineer</a>
+                <a href={customersupportengineer}
+                   className="doc-link"
+                   download={"Ben Garlock - "
+                   + `${this.props.company.company_name}`
+                   + " - "
+                   + `${this.props.company.job_title}`
+                   + " - Resume.pdf"}>Resume - Customer Support Engineer</a>
             </div>
         )
     }
