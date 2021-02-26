@@ -12,11 +12,11 @@ class CoverLetterPrint extends React.Component {
                 <span>
                     New York, NY |
                     646-241-6885 |
-                    <a href="mailto:ben.garlock@gmail.com" target="_blank">ben.garlock@gmail.com</a> |
-                    <a href="https://github.com/bengarlock" target="_blank">Github</a> |
-                    <a href="https://ben-garlock.medium.com/" target="_blank">Blog</a> |
-                    <a href="https://www.linkedin.com/in/ben-garlock-18400578/" target="_blank">LinkedIn</a> |
-                    <a href="https://www.bengarlock.com/" target="_blank">Portfolio</a> |
+                    <a href="mailto:ben.garlock@gmail.com" target="_blank" rel="noreferrer">ben.garlock@gmail.com</a> |
+                    <a href="https://github.com/bengarlock" target="_blank" rel="noreferrer">Github</a> |
+                    <a href="https://ben-garlock.medium.com/" target="_blank" rel="noreferrer">Blog</a> |
+                    <a href="https://www.linkedin.com/in/ben-garlock-18400578/" target="_blank" rel="noreferrer">LinkedIn</a> |
+                    <a href="https://www.bengarlock.com/" target="_blank" rel="noreferrer">Portfolio</a> |
                 </span>
                 <br />
                 <span id="job-title-header">

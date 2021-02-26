@@ -2,8 +2,6 @@ import React from "react"
 import "../Stylesheets/CoverLetterTemplate.css"
 import coverLetter from "../Media/Cover Letter - Template.docx"
 import Template from "../Cards/Template";
-import ReactHtmlParser from 'react-html-parser';
-import ReactToPrint from "react-to-print";
 import PrintCoverLetter from "./CoverLetterPrint";
 
 

@@ -42,7 +42,7 @@ class ApplicationInfo extends React.Component {
                         {this.props.application.job_title}
                     </div>
                     <div className="app-item">
-                        <a href={this.props.application.url} target="_blank">Job Listing</a>
+                        <a href={this.props.application.url} target="_blank" rel="noreferrer">Job Listing</a>
                     </div>
                     <div className="app-item">
                         {this.props.application.status}

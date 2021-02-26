@@ -11,3 +11,14 @@
 #application-form-wrapper {
     flex: 2;
 }
+
+#application-search-form input {
+    text-align: center;
+    outline: none;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+}
