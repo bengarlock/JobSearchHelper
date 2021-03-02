@@ -28,16 +28,13 @@ class ApplicationInfo extends React.Component {
                     .then(this.props.removeAppFromSearch(this.props.application))
             } else {this.setState({delete_clicked: true}) }
 
-        } else {
-            this.setState({ delete_clicked: false})
-        }
-
+        } else {this.setState({delete_clicked: false})}
     }
 
 
     render() {
         return(
-            <div className="content-wrapper">
+            <div className="content-wrapper" onClick={this.onClickHandler}>
                 <div id="app-item-wrapper">
                     <h3>{this.props.application.company_name} Info</h3>
                     <div className="app-item">
