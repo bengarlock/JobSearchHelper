@@ -75,7 +75,7 @@ class Applications extends React.Component {
         return(
             <>
                 <div className="content-wrapper" id="application">
-                    <div id="application-list-wrapper">
+                    <div id="application-header-wrapper">
                         <h3>Applications</h3>
                         <div id="application-search-form">
                             <form>
@@ -91,10 +91,12 @@ class Applications extends React.Component {
                             {this.state.search ? <button onClick={this.onClickHandler}>
                                 clear
                             </button> : null}
-
                         </div>
-                        {this.renderApplications()}
+                        <div id="application-list-wrapper">
+                            {this.renderApplications()}
+                        </div>
                     </div>
+
                     <div id="application-form-wrapper">
                         {this.state.current_application ?
                             <ApplicationInfo

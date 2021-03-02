@@ -8,6 +8,10 @@
     height: 90vh;
 }
 
+#application-header-wrapper {
+    flex: 1 1;
+}
+
 #application-form-wrapper {
     flex: 2;
 }
