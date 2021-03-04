@@ -1,4 +1,5 @@
 .content-wrapper {
     flex: 4;
     background-color: lightgray;
+    height: 100%;
 }
