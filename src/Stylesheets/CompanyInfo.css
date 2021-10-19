@@ -1,8 +1,3 @@
-.content-wrapper {
-    display: flex;
-    flex-direction: row;
-}
-
 input {
     color: black;
     outline: none;
@@ -26,13 +21,13 @@ input {
 .doc-link {
     margin: 4px;
     padding: 1em;
-    background-color: #357c7c;
+    background-color: #18518d;
     text-align: center;
     color: white;
     user-select: none;
 }
 
 .doc-link:hover {
-    background-color: #225d5d;
+    background-color: #05167d;
     transition: .5s;
 }

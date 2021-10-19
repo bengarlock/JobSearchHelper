@@ -1,3 +1,8 @@
+.social-links-wrapper {
+    text-align: center;
+    user-select: none;
+}
+
 #links-wrapper {
     display: flex;
     flex-direction: column;
@@ -17,17 +22,24 @@
 }
 
 .social-link:hover {
-    background-color: #266e6e;
+    background-color: #18518d;
     transition: .5s;
 }
 
 .social-link-selected {
     margin: 4px;
     flex: 1;
-    background-color: #266e6e;
+    background-color: #05167d;
     transition: .5s;
     padding-top: 1em;
     padding-bottom: 1em;
     color: white;
     text-align: center;
+}
+
+.job-title-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

@@ -2,16 +2,19 @@
     user-select: none;
     width: 200px;
     height: 100px;
+    background-color: #18518d;
 }
 
 .job:hover {
-    background-color: #225d5d;
+    background-color: #05167d;
     color: white;
+    transition: .5s;
 }
 
 #job-selected {
     user-select: none;
     width: 200px;
     height: 100px;
-    background-color: #225d5d;
+    background-color: #05167d;
+    transition: .5s;
 }

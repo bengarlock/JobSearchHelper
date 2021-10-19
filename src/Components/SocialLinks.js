@@ -19,16 +19,16 @@ class SocialLinks extends React.Component {
     onClickHandler = (e) => {
         if (e.target.id === "linked-in") {
             navigator.clipboard.writeText('https://www.linkedin.com/in/ben-garlock-18400578/')
-            e.target.style.backgroundColor = "#2a603a"
+            e.target.style.backgroundColor = "#05167d"
         } else if (e.target.id === "github") {
             navigator.clipboard.writeText('https://github.com/bengarlock')
-            e.target.style.backgroundColor = "#2a603a"
+            e.target.style.backgroundColor = "#05167d"
         } else if (e.target.id === "portfolio") {
             navigator.clipboard.writeText('https://bengarlock.com')
-            e.target.style.backgroundColor = "#2a603a"
+            e.target.style.backgroundColor = "#05167d"
         } else if (e.target.id === "account-manager-title") {
             navigator.clipboard.writeText('Sr. Account Manager')
-            e.target.style.backgroundColor = "#2a603a"
+            e.target.style.backgroundColor = "#05167d"
         } else if (e.target.id === "account-manager-role") {
             navigator.clipboard.writeText("Directly responsible for maintaining 300+ elite, high-value OpenTable restaurant partnerships.\n \n" +
                 "Coordinated with software development teams to provide product feedback, deploy new features, and conduct production tests.\n \n" +
@@ -54,9 +54,8 @@ class SocialLinks extends React.Component {
 
     render() {
         return(
-            <div className="content-wrapper">
+            <div className="social-links-wrapper">
                 <h3>Social Links</h3>
-                
                     <div className='social-link' id="linked-in"
                          onClick={this.onClickHandler}> LinkedIn </div>
                     <div className='social-link'  id="github"
@@ -67,12 +66,9 @@ class SocialLinks extends React.Component {
                 <h3>Shortcuts</h3>
                 <div className='social-link' id="job-tracker-template"
                      onClick={this.onClickHandler}>Data Entry</div>
-                <div className='social-link' id="job-tracker-link"
-                     onClick={this.onClickHandler}>Job Tracker</div>
-
 
                 <h3>Job Titles</h3>
-                <div>
+                <div className="job-title-wrapper">
                     {this.renderJobTitleIdes()}
                 </div>
 
