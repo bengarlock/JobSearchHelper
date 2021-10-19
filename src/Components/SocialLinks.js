@@ -36,14 +36,6 @@ class SocialLinks extends React.Component {
                 "platform including marketing, business development products, and inventory utilization.\n \n" +
                 "Lead partner's system conversion efforts from a legacy system built on client-server architecture to a " +
                 "cloud-based technology product.")
-        } else if (e.target.id === "job-tracker-template") {
-            navigator.clipboard.writeText(dateFormatted + "\t"
-                + this.props.company.company_name + "\t "
-                + this.props.company.job_title + "\t"
-                + "Applied" + "\t"
-                + this.props.company.url)
-        } else if (e.target.id === "job-tracker-link") {
-            window.open("https://docs.google.com/spreadsheets/d/1NWsGKRt_ffM1FUEJztA5m5rytPTg6fKWvRd7Ua9wFI8/edit#gid=0")
         }
     }
 
@@ -62,10 +54,6 @@ class SocialLinks extends React.Component {
                          onClick={this.onClickHandler}>GitHub</div>
                     <div className='social-link'  id="portfolio"
                          onClick={this.onClickHandler}>Portfolio</div>
-
-                <h3>Shortcuts</h3>
-                <div className='social-link' id="job-tracker-template"
-                     onClick={this.onClickHandler}>Data Entry</div>
 
                 <h3>Job Titles</h3>
                 <div className="job-title-wrapper">
