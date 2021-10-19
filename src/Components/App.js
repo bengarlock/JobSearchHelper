@@ -26,9 +26,9 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <div id="menu-content-wrapper">
-                    <Menu />
+
                     <Router basename={"/jobapplications"}>
+                        <Menu />
                         <Route exact path="/"><Redirect to="/home" /></Route>
                         <Route path="/home" component={Create} />
                         <Route path="/coverletter" component={CoverLetterTemplates} />
@@ -36,14 +36,13 @@ class App extends React.Component {
                         <Route path="/applications" component={Applications} />
                         <Route path="/reset" component={Reset} />
                     </Router>
-                </div>
+
             </>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    //state.resyRestaurants calls the reducer and .resyRestaurants calls the action
     applications: state.applications.applications
 })
 

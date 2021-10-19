@@ -5,8 +5,15 @@ import salesengineerresume from "../Media/Resume - Solutions Engineer - v3 - Fin
 import customersupportengineer from "../Media/Resume - Customer Support Engineer - v3 - Final.pdf"
 import customersuccessmanager from "../Media/Resume - Customer Success Manager - v3 - Final.pdf"
 import TechButton from "../Cards/TechButton";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { createJobApplication } from '../Actions/JobApplications'
 
 class Create extends React.Component {
+
+    static propTypes = {
+        applications: PropTypes.array.isRequired,
+    }
 
     state = {
         company_name: '',
@@ -19,7 +26,7 @@ class Create extends React.Component {
     onChangeHandler = (e) => {
         if (e.target.name === "company-name") {
             let company = e.target.value
-            let check = this.props.company.applications.find(item =>
+            let check = this.props.applications.find(item =>
                 item.company_name.toLowerCase() === company.toLowerCase()
             )
             if (check) {
@@ -50,28 +57,16 @@ class Create extends React.Component {
     }
 
     onSubmitHandler = (e) => {
-        e.preventDefault()
-        const data = {
+
+        const application = {
             company_name: this.state.company_name,
             job_title: this.state.job_title,
             url: this.state.url,
-            technologies: this.props.company.technologies,
             status: "Applied",
             contact: this.state.contact,
         }
 
-        const packet = {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                "accept": "application/json",
-            },
-            body: JSON.stringify(data)
-        }
-
-        fetch(this.props.backendUrl + "jobapps/", packet)
-            .then(res => res.json())
-            .then(company => this.props.setCompany(company))
+        this.props.createJobApplication(application)
     }
 
     renderDocs = () => {
@@ -130,8 +125,8 @@ class Create extends React.Component {
     render() {
         return(
             <div className="content-wrapper">
-                <h3>Company Info</h3>
                 <form id="company-form" onSubmit={this.onSubmitHandler}>
+                    <h4>Company Info</h4>
                     <input name="company-name"
                            onChange={this.onChangeHandler}
                            value={this.state.company_name}
@@ -172,4 +167,8 @@ class Create extends React.Component {
     }
 }
 
-export default Create
+const mapStateToProps = (state) => ({
+    applications: state.applications.applications
+})
+
+export default connect(mapStateToProps, { createJobApplication })(Create);

@@ -4,6 +4,7 @@ import "../Stylesheets/Menu.css"
 import { toggleMenu } from '../Actions/Menu'
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class Menu extends React.Component {
 
@@ -19,33 +20,40 @@ class Menu extends React.Component {
         return(
             <div id="menu-wrapper">
 
-                    <div className={this.props.menu === "create" ?
-                        "menu-item-selected" : "menu-item"}
-                        onClick={this.pageToggle}
-                        id="create">Create
-                    </div>
+                <Link to={{pathname: "/home"}}
+                      className={this.props.menu === "create" ?
+                    "menu-item-selected" : "menu-item"}
+                      onClick={this.pageToggle}
+                      id="create">Create</Link>
 
-                    <div className={this.props.menu === "cover-letter" ?
-                        "menu-item-selected" : "menu-item"}
-                        onClick={this.pageToggle}
-                        id="cover-letter">Cover Letter
-                    </div>
+                <Link to={{pathname: "/cover"}} className={this.props.menu === "cover-letter" ?
+                    "menu-item-selected" : "menu-item"}
+                      onClick={this.pageToggle}
+                      id="cover-letter">Cover Letter</Link>
 
-                    <div className={this.props.menu === "social-links" ?
-                        "menu-item-selected" : "menu-item"}
-                        onClick={this.pageToggle}
-                        id="social-links">Social Links
-                    </div>
-                    <div className={this.props.menu === "applications" ?
-                        "menu-item-selected" : "menu-item"}
-                        onClick={this.pageToggle}
-                        id="applications">Applications
-                    </div>
-                    <div className={this.props.menu === "reset" ?
-                        "menu-item-selected" : "menu-item"}
-                        onClick={this.pageToggle}
-                        id="reset">Reset
-                    </div>
+                <Link to={{pathname: "/sociallinks"}} className={this.props.menu === "social-links" ?
+                    "menu-item-selected" : "menu-item"}
+                      onClick={this.pageToggle}
+                      id="social-links">Social Links
+                </Link>
+
+                <Link to={{pathname: "/applications"}} className={this.props.menu === "applications" ?
+                    "menu-item-selected" : "menu-item"}
+                      onClick={this.pageToggle}
+                      id="applications">
+                    Applications
+                </Link>
+                <Link to={{pathname: "/reset"}} className={this.props.menu === "reset" ?
+                    "menu-item-selected" : "menu-item"}
+                      onClick={this.pageToggle}
+                      id="reset">
+                    Reset
+                </Link>
+
+
+
+
+
             </div>
         )
     }

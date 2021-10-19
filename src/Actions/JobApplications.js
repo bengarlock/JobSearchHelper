@@ -25,9 +25,14 @@ export const createJobApplication = (application) => {
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                name: application.name
+                company_name: application.company_name,
+                job_title: application.job_title,
+                url: application.url,
+                status: application.status,
+                contact: application.contact,
             })
         }
+
         const response = await fetch("https://bengarlock.com/api/v1/jobapps/", packet)
         const newApplication = await response.json()
         dispatch({

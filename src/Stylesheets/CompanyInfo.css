@@ -1,7 +1,11 @@
-#content {
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
 input {
+    color: black;
+    outline: none;
     margin: 2px;
     padding: 1em;
 }
