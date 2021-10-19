@@ -1,11 +1,12 @@
 .content-wrapper#application {
     display: flex;
+
 }
 
 #application-list-wrapper {
     flex: 1;
     overflow-y: auto;
-    height: 90vh;
+    height: 25em;
 }
 
 #application-header-wrapper {

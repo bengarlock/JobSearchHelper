@@ -3,10 +3,16 @@ import Header from "./Header";
 import Menu from "./Menu";
 import Content from "./Content";
 import React from 'react'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getJobApplications } from "../Actions/JobApplications";
 
-const backendUrl = "https://www.bengarlock.com:8080/"
 
 class App extends React.Component {
+
+    static propTypes = {
+        applications: PropTypes.array.isRequired,
+    }
 
     state = {
         current_page: '',
@@ -19,11 +25,7 @@ class App extends React.Component {
     }
 
     componentDidMount = async () => {
-        const response = await fetch(backendUrl + "jobapps/")
-        const data = await response.json()
-        this.setState({
-            applications: data
-        })
+        this.props.getJobApplications()
     }
 
 
@@ -101,11 +103,16 @@ class App extends React.Component {
                              company={this.state}
                              updateTechnologies={this.updateTechnologies}
                              updateApplications={this.updateApplications}
-                             backendUrl={backendUrl}/>
+                             />
                 </div>
             </>
         );
     }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    //state.resyRestaurants calls the reducer and .resyRestaurants calls the action
+    applications: state.applications.applications
+})
+
+export default connect(mapStateToProps, { getJobApplications })(App);
