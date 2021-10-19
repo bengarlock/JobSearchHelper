@@ -8,11 +8,13 @@ import TechButton from "../Cards/TechButton";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { createJobApplication } from '../Actions/JobApplications'
+import { toggleCompany } from "../Actions/Company";
 
 class Create extends React.Component {
 
     static propTypes = {
         applications: PropTypes.array.isRequired,
+        company: PropTypes.array.isRequired
     }
 
     state = {
@@ -57,6 +59,7 @@ class Create extends React.Component {
     }
 
     onSubmitHandler = (e) => {
+        e.preventDefault()
 
         const application = {
             company_name: this.state.company_name,
@@ -66,7 +69,16 @@ class Create extends React.Component {
             contact: this.state.contact,
         }
 
-        this.props.createJobApplication(application)
+        const company = this.props.createJobApplication(application)
+        this.props.toggleCompany(company)
+
+        this.setState({
+            company_name: '',
+            job_title: '',
+            contact: '',
+            url: '',
+            applied_before: false,
+        })
     }
 
     renderDocs = () => {
@@ -168,7 +180,8 @@ class Create extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    applications: state.applications.applications
+    applications: state.applications.applications,
+    company: state.company.company
 })
 
-export default connect(mapStateToProps, { createJobApplication })(Create);
+export default connect(mapStateToProps, { createJobApplication, toggleCompany })(Create);

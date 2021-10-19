@@ -2,21 +2,21 @@ import React from 'react'
 import Application from "../Cards/Application";
 import ApplicationInfo from "./ApplicationInfo";
 import "../Stylesheets/Applications.css"
+import {connect} from "react-redux";
+import {getJobApplications} from "../Actions/JobApplications";
+import PropTypes from "prop-types";
 
 class Applications extends React.Component {
+
+    static propTypes = {
+        applications: PropTypes.array.isRequired,
+    }
 
     state = {
         current_application: '',
         applications: '',
         search: '',
         search_applications: '',
-    }
-
-    componentDidMount = async () => {
-        const applications = [...this.props.applications]
-        this.setState({
-            applications: applications
-        })
     }
 
     toggleApplication = (applicationId) => {
@@ -40,16 +40,12 @@ class Applications extends React.Component {
             return this.state.search_applications.map(application =>
                 <Application
                     key={application.id}
-                    application={application}
-                    currentApplication={this.state.current_application}
-                    toggleApplication={this.toggleApplication}/>)
+                    application={application}/>)
         } else if (this.props.applications) {
             return this.props.applications.map(application =>
                 <Application
                     key={application.id}
-                    application={application}
-                    currentApplication={this.state.current_application}
-                    toggleApplication={this.toggleApplication}/>)
+                    application={application}/>)
         } else {
             return <div>Loading...</div>
         }
@@ -118,4 +114,8 @@ class Applications extends React.Component {
     }
 }
 
-export default Applications
+const mapStateToProps = (state) => ({
+    applications: state.applications.applications
+})
+
+export default connect(mapStateToProps, { getJobApplications })(Applications);
