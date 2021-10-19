@@ -50,10 +50,6 @@ class Menu extends React.Component {
                     Reset
                 </Link>
 
-
-
-
-
             </div>
         )
     }

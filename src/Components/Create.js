@@ -1,5 +1,5 @@
 import React from "react"
-import "../Stylesheets/CompanyInfo.css"
+import "../Stylesheets/Create.css"
 import fullstackresume from "../Media/Resume - Full Stack Developer - v3 - Final.pdf"
 import salesengineerresume from "../Media/Resume - Solutions Engineer - v3 - Final.pdf"
 import customersupportengineer from "../Media/Resume - Customer Support Engineer - v3 - Final.pdf"
@@ -137,34 +137,33 @@ class Create extends React.Component {
     render() {
         return(
             <div className="content-wrapper">
+                <h3>Create Application</h3>
+                <div>{this.state.applied_before ? <span>You may have applied here before</span> : null}</div>
                 <form id="company-form" onSubmit={this.onSubmitHandler}>
-                    <h4>Company Info</h4>
                     <input name="company-name"
                            onChange={this.onChangeHandler}
                            value={this.state.company_name}
                            placeholder="Company Name"
                            autoComplete="off"/>
-                           <br />
-                           <div>{this.state.applied_before ? <p>You may have applied here before</p> : null}</div>
                     <input name="job-title"
                            onChange={this.onChangeHandler}
                            value={this.state.job_title}
                            placeholder="Job Title"
                            autoComplete="off"/>
-                           <br />
+
                     <input name="contact"
                            onChange={this.onChangeHandler}
                            value={this.state.contact}
                            placeholder="Contact"
                            autoComplete="off"/>
-                    <br />
+
                     <input name="url"
                            onChange={this.onChangeHandler}
                            value={this.state.url}
                            placeholder="Listing URL"
                            autoComplete="off"/>
-                           <br />
-                    <input type="submit"/>
+                    <input type="submit" className="submit"/>
+
                 </form>
 
                 <div>
