@@ -1,34 +1,17 @@
 import React from 'react'
 import "../Stylesheets/ApplicationInfo.css"
+import {connect} from "react-redux";
+import {toggleCompany} from "../Actions/Company";
+import PropTypes from "prop-types";
 
 class ApplicationInfo extends React.Component {
 
-    state = {
-        date_applied: '',
-        company_name: '',
-        job_title: '',
-        delete_clicked: false,
+    static propTypes = {
+        company: PropTypes.array.isRequired,
     }
 
-    onClickHandler = (e) => {
-        const url = this.props.backendUrl + "jobapps/" + this.props.application.id + "/"
-        const packet = {
-            method: "DELETE",
-            headers: {
-                "content-type": "application/json",
-                "accept": "application/json",
-            }
-        }
-        if (e.target.className === "delete") {
-            if (this.state.delete_clicked) {
-                fetch(url, packet)
-                    .then(this.props.renderApplications())
-                    .then(this.props.toggleApplication(null))
-                    .then(this.props.updateApplications(this.props.application, "remove"))
-                    .then(this.props.removeAppFromSearch(this.props.application))
-            } else {this.setState({delete_clicked: true}) }
-
-        } else {this.setState({delete_clicked: false})}
+    onClickHandler = () => {
+        this.props.toggleCompany(this.props.application)
     }
 
 
@@ -62,4 +45,8 @@ class ApplicationInfo extends React.Component {
     }
 }
 
-export default ApplicationInfo
+const mapStateToProps = (state) => ({
+    company: state.company.company
+})
+
+export default connect(mapStateToProps, {toggleCompany })(ApplicationInfo);

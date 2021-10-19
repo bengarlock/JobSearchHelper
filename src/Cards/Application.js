@@ -1,11 +1,13 @@
 import React from 'react'
-
+import {toggleCompany} from "../Actions/Company";
+import {connect} from "react-redux";
+import {createJobApplication} from "../Actions/JobApplications";
 
 
 class Application extends React.Component {
 
     onClickHandler = () => {
-        this.props.toggleApplication(this.props.application.id)
+        this.props.toggleCompany(this.props.application)
     }
 
     render() {
@@ -19,4 +21,9 @@ class Application extends React.Component {
     }
 }
 
-export default Application
+const mapStateToProps = (state) => ({
+    applications: state.applications.applications,
+    company: state.company.company
+})
+
+export default connect(mapStateToProps, { toggleCompany })(Application);
