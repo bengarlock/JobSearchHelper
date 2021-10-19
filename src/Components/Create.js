@@ -6,7 +6,7 @@ import customersupportengineer from "../Media/Resume - Customer Support Engineer
 import customersuccessmanager from "../Media/Resume - Customer Success Manager - v3 - Final.pdf"
 import TechButton from "../Cards/TechButton";
 
-class Content extends React.Component {
+class Create extends React.Component {
 
     state = {
         company_name: '',
@@ -161,15 +161,15 @@ class Content extends React.Component {
                 </form>
 
                 <div>
-                    {this.props.company.company_name ? this.renderTechnology() : null}
+                    {/*{this.props.company.company_name ? this.renderTechnology() : null}*/}
                 </div>
 
                 <div id="doc-wrapper">
-                    {this.props.company.company_name ? this.renderDocs() : null}
+                    {/*{this.props.company.company_name ? this.renderDocs() : null}*/}
                 </div>
             </div>
         )
     }
 }
 
-export default Content
+export default Create

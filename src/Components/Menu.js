@@ -1,49 +1,59 @@
 
 import React from "react"
 import "../Stylesheets/Menu.css"
+import { toggleMenu } from '../Actions/Menu'
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class Menu extends React.Component {
 
-    pageToggle = (e) => {
-        this.props.togglePage(e.target.id)
+    static propTypes = {
+        menu: PropTypes.string.isRequired,
     }
 
+    pageToggle = (e) => {
+        this.props.toggleMenu(e.target.id)
+    }
 
     render() {
         return(
             <div id="menu-wrapper">
-                <ul>
-                    <li className={this.props.currentPage === "company-info" ?
+
+                    <div className={this.props.menu === "create" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
-                        id="company-info">Company Info
-                    </li>
+                        id="create">Create
+                    </div>
 
-                    <li className={this.props.currentPage === "cover-letter" ?
+                    <div className={this.props.menu === "cover-letter" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
-                        id="cover-letter">Cover Letter Templates
-                    </li>
+                        id="cover-letter">Cover Letter
+                    </div>
 
-                    <li className={this.props.currentPage === "social-links" ?
+                    <div className={this.props.menu === "social-links" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
                         id="social-links">Social Links
-                    </li>
-                    <li className={this.props.currentPage === "applications" ?
+                    </div>
+                    <div className={this.props.menu === "applications" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
                         id="applications">Applications
-                    </li>
-                    <li className={this.props.currentPage === "reset" ?
+                    </div>
+                    <div className={this.props.menu === "reset" ?
                         "menu-item-selected" : "menu-item"}
                         onClick={this.pageToggle}
                         id="reset">Reset
-                    </li>
-                </ul>
+                    </div>
             </div>
         )
     }
 }
 
-export default Menu
+const mapStateToProps = (state) => ({
+    //state.resyRestaurants calls the reducer and .resyRestaurants calls the action
+    menu: state.menu.menu
+})
+
+export default connect(mapStateToProps, { toggleMenu })(Menu);

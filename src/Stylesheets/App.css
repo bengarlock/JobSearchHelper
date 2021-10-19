@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 
 * {
     margin: 0;
@@ -16,5 +16,5 @@
 
 #menu-content-wrapper {
     display: flex;
-    height: calc(100% - 6em);
+    flex-direction: column;
 }
