@@ -104,7 +104,6 @@ class Applications extends React.Component {
                             )}/> : null
                     }
                 </div>
-
             </>
         )
     }
