@@ -1,6 +1,6 @@
-//reducers evaluate actions and return state based off that action.
-
 import { GET_APPLICATIONS } from "../Actions/Types";
+export const CHANGE_CURRENT_APPLICATION = "CHANGE_CURRENT_APPLICATION"
+
 
 const initialState = {
     applications: [],
@@ -13,6 +13,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 applications: action.payload,
+            }
+
+        case CHANGE_CURRENT_APPLICATION:
+            return {
+                ...state,
+                currentApplication: action.payload,
             }
 
         default:

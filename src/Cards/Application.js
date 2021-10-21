@@ -1,13 +1,19 @@
 import React from 'react'
-import {toggleCompany} from "../Actions/Company";
-import {connect} from "react-redux";
-import {createJobApplication} from "../Actions/JobApplications";
+import { toggleCompany } from "../Actions/Company";
+import { connect } from "react-redux";
+import { changeCurrentApplication } from "../Actions/JobApplications";
+import PropTypes from "prop-types";
 
 
 class Application extends React.Component {
 
+    static propTypes = {
+        applications: PropTypes.array.isRequired,
+        currentApplication: PropTypes.array.isRequired
+    }
+
     onClickHandler = () => {
-        this.props.toggleCompany(this.props.application)
+        this.props.changeCurrentApplication(this.props.application)
     }
 
     render() {
@@ -23,7 +29,7 @@ class Application extends React.Component {
 
 const mapStateToProps = (state) => ({
     applications: state.applications.applications,
-    company: state.company.company
+    currentApplication: state.applications.currentApplication
 })
 
-export default connect(mapStateToProps, { toggleCompany })(Application);
+export default connect(mapStateToProps, { toggleCompany, changeCurrentApplication })(Application);

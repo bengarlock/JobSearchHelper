@@ -46,7 +46,7 @@ export const changeCurrentApplication = (application) => {
     return (dispatch) => {
         dispatch({
             type: CHANGE_CURRENT_APPLICATION,
-            payload: application
+            payload: [application]
         })
     }
 }

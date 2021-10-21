@@ -3,65 +3,38 @@ import Application from "../Cards/Application";
 import ApplicationInfo from "./ApplicationInfo";
 import "../Stylesheets/Applications.css"
 import {connect} from "react-redux";
-import {getJobApplications} from "../Actions/JobApplications";
+import { getJobApplications, changeCurrentApplication} from "../Actions/JobApplications";
 import PropTypes from "prop-types";
 
 class Applications extends React.Component {
 
     static propTypes = {
         applications: PropTypes.array.isRequired,
+        currentApplication: PropTypes.array.isRequired
     }
 
     state = {
         search: '',
-        search_applications: '',
-    }
-
-    toggleApplication = (applicationId) => {
-        this.setState({
-            current_application: applicationId
-        })
-    }
-
-    removeAppFromSearch = (app) => {
-        const search_applications = [...this.state.search_applications]
-        const updatedList = search_applications.filter(application => application.id !== app.id)
-        this.setState({search_applications: updatedList})
-
-        const applications = [...this.state.applications]
-        const updatedApplications = applications.filter(application => application.id !== app.id)
-        this.setState({applications: updatedApplications})
     }
 
     renderApplications = () => {
-        if (this.state.search_applications) {
-            return this.state.search_applications.map(application =>
-                <Application
-                    key={application.id}
-                    application={application}/>)
-        } else if (this.props.applications) {
-            return this.props.applications.map(application =>
-                <Application
-                    key={application.id}
-                    application={application}/>)
-        } else {
-            return <div>Loading...</div>
-        }
+        return this.props.applications.map(application =>
+            <Application key={application.id} application={application}/>)
     }
 
     onChangeHandler = async (e) => {
         if (e.target.name === "search-form") {
-            await this.setState({search: e.target.value})
-            const applications = [...this.state.applications]
-            const searchResults = applications.filter(application =>
-                application.company_name.toLowerCase().includes(this.state.search.toLowerCase()))
-            this.setState({search_applications: searchResults})
+            this.setState({
+                search: e.target.value
+            })
         }
     }
 
 
     onClickHandler = () => {
-        this.setState({search: '', search_applications: ''})
+        this.setState({
+            search: '',
+        })
     }
 
 
@@ -90,16 +63,8 @@ class Applications extends React.Component {
                         </div>
                 </div>
                 <div id="application-form-wrapper">
-                    {this.state.current_application ?
-                        <ApplicationInfo
-                            removeAppFromSearch={this.removeAppFromSearch}
-                            renderApplications={this.renderApplications}
-                            updateApplications={this.props.updateApplications}
-                            toggleApplication={this.toggleApplication}
-                            backendUrl={this.props.backendUrl}
-                            application={this.props.applications.find(
-                                item=> item.id === this.state.current_application
-                            )}/> : null
+                    {this.props.current_application ?
+                        <ApplicationInfo /> : null
                     }
                 </div>
             </>
@@ -108,7 +73,8 @@ class Applications extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    applications: state.applications.applications
+    applications: state.applications.applications,
+    currentApplication: state.applications.currentApplication
 })
 
 export default connect(mapStateToProps, { getJobApplications })(Applications);
