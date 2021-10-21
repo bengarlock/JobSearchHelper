@@ -13,8 +13,6 @@ class Applications extends React.Component {
     }
 
     state = {
-        current_application: '',
-        applications: '',
         search: '',
         search_applications: '',
     }

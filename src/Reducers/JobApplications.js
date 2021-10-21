@@ -4,6 +4,7 @@ import { GET_APPLICATIONS } from "../Actions/Types";
 
 const initialState = {
     applications: [],
+    currentApplication: []
 }
 
 export default function (state = initialState, action) {

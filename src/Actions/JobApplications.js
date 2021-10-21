@@ -1,6 +1,6 @@
 import { GET_APPLICATIONS } from "./Types";
 import { CREATE_APPLICATION } from "./Types";
-
+import { CHANGE_CURRENT_APPLICATION } from "./Types"
 
 //GET JOB APPLICATIONS
 export const getJobApplications = () => {
@@ -38,6 +38,15 @@ export const createJobApplication = (application) => {
         dispatch({
             type: CREATE_APPLICATION,
             payload: newApplication
+        })
+    }
+}
+
+export const changeCurrentApplication = (application) => {
+    return (dispatch) => {
+        dispatch({
+            type: CHANGE_CURRENT_APPLICATION,
+            payload: application
         })
     }
 }
