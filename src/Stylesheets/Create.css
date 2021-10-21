@@ -1,3 +1,11 @@
+.content-wrapper-create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
 #company-form {
     margin: 2em;
     display: flex;

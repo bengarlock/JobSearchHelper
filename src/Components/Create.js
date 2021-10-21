@@ -136,7 +136,7 @@ class Create extends React.Component {
 
     render() {
         return(
-            <div className="content-wrapper">
+            <div className="content-wrapper-create">
                 <h3>Create Application</h3>
                 <div>{this.state.applied_before ? <span>You may have applied here before</span> : null}</div>
                 <form id="company-form" onSubmit={this.onSubmitHandler}>
