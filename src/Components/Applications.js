@@ -70,44 +70,40 @@ class Applications extends React.Component {
     render() {
         return(
             <>
-                <div className="content-wrapper" id="application">
-                    <div id="application-header-wrapper">
-                        <h3>Applications</h3>
-                        <div id="application-search-form">
-                            <form>
-                                <input
-                                    autoComplete="off"
-                                    type="text"
-                                    placeholder="Applications Search"
-                                    name="search-form"
-                                    value={this.state.search}
-                                    onChange={this.onChangeHandler}
-                                />
-                            </form>
-                            {this.state.search ? <button onClick={this.onClickHandler}>
-                                clear
-                            </button> : null}
-                        </div>
+                <div id="application-header-wrapper">
+                    <h3>Applications</h3>
+                    <div id="application-search-form">
+                        <form>
+                            <input
+                                autoComplete="off"
+                                type="text"
+                                placeholder="Applications Search"
+                                name="search-form"
+                                value={this.state.search}
+                                onChange={this.onChangeHandler}
+                            />
+                        </form>
+                        {this.state.search ? <button onClick={this.onClickHandler}>
+                            clear
+                        </button> : null}
+                    </div>
                         <div id="application-list-wrapper">
                             {this.renderApplications()}
                         </div>
-                    </div>
-
-                    <div id="application-form-wrapper">
-                        {this.state.current_application ?
-                            <ApplicationInfo
-                                removeAppFromSearch={this.removeAppFromSearch}
-                                renderApplications={this.renderApplications}
-                                updateApplications={this.props.updateApplications}
-                                toggleApplication={this.toggleApplication}
-                                backendUrl={this.props.backendUrl}
-                                application={this.props.applications.find(
-                                    item=> item.id === this.state.current_application
-                                )}/> : null
-                        }
-                    </div>
                 </div>
-
+                <div id="application-form-wrapper">
+                    {this.state.current_application ?
+                        <ApplicationInfo
+                            removeAppFromSearch={this.removeAppFromSearch}
+                            renderApplications={this.renderApplications}
+                            updateApplications={this.props.updateApplications}
+                            toggleApplication={this.toggleApplication}
+                            backendUrl={this.props.backendUrl}
+                            application={this.props.applications.find(
+                                item=> item.id === this.state.current_application
+                            )}/> : null
+                    }
+                </div>
 
             </>
         )

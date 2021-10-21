@@ -1,20 +1,17 @@
-.content-wrapper#application {
-    display: flex;
 
-}
 
 #application-list-wrapper {
-    flex: 1;
     overflow-y: auto;
     height: 25em;
 }
 
 #application-header-wrapper {
-    flex: 1 1;
+
+
 }
 
 #application-form-wrapper {
-    flex: 2;
+
 }
 
 #application-search-form input {

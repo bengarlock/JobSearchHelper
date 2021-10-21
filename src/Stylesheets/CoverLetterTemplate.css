@@ -23,7 +23,6 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     overflow: hidden;
-
 }
 
 .template-sub-wrapper {

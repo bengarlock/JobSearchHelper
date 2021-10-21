@@ -23,7 +23,7 @@ a, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
-.content-wrapper {
-    display: flex;
-    flex-direction: row;
-}
+/*.content-wrapper {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
