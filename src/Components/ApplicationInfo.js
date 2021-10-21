@@ -39,7 +39,6 @@ class ApplicationInfo extends React.Component {
                         {this.state.delete_clicked ? "CONFIRM DELETE?" : "DELETE"}
                     </div>
                 </div>
-
             </div>
         )
     }

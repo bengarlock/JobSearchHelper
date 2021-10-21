@@ -30,13 +30,11 @@ class Applications extends React.Component {
         }
     }
 
-
     onClickHandler = () => {
         this.setState({
             search: '',
         })
     }
-
 
     render() {
         return(
