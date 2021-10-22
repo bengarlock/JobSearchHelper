@@ -18,7 +18,19 @@ class Application extends React.Component {
     }
 
     onClickHandler = () => {
-        this.props.changeCurrentApplication([this.props.application])
+        this.props.changeCurrentApplication({})
+        if (!this.state.renderInfo) {
+            this.setState({
+                renderInfo: !this.state.renderInfo
+            })
+            this.props.changeCurrentApplication(this.props.application)
+        } else {
+            this.setState({
+                renderInfo: !this.state.renderInfo
+            })
+            this.props.changeCurrentApplication({})
+        }
+
     }
 
     render() {
