@@ -18,18 +18,15 @@ class Application extends React.Component {
     }
 
     onClickHandler = () => {
-        this.props.changeCurrentApplication(this.props.application)
-        this.setState({
-            renderInfo: !this.state.renderInfo
-        })
+        this.props.changeCurrentApplication([this.props.application])
     }
 
     render() {
         return(
             <>
-                <div className={this.props.application.id === this.props.currentApplication ?
+                <div onClick={this.onClickHandler} className={this.props.application.id === this.props.currentApplication ?
                     "social-link-selected" : "social-link"}
-                     onClick={this.onClickHandler}>
+                     >
                     {this.props.application.company_name}
                 </div>
 

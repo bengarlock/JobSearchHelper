@@ -15,20 +15,8 @@ class ApplicationInfo extends React.Component {
         delete_clicked: false
     }
 
-    onClickHandler = async (e) => {
-        if (e.target.className === "delete") {
-            this.setState({
-                delete_clicked: !this.state.delete_clicked
-            })
-        }
-
-        if (!this.state.clicked) {
-            await this.props.toggleCompany()
-            await this.props.toggleCompany(this.props.application)
-            this.setState({
-                clicked: !this.state.clicked
-            })
-        }
+    onClickHandler = () => {
+        this.props.toggleCompany(this.props.application)
     }
 
     renderApplication = () => {
