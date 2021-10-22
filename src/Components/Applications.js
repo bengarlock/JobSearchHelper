@@ -60,11 +60,7 @@ class Applications extends React.Component {
                             {this.renderApplications()}
                         </div>
                 </div>
-                <div id="application-form-wrapper">
-                    {this.props.current_application ?
-                        <ApplicationInfo /> : null
-                    }
-                </div>
+
             </>
         )
     }
