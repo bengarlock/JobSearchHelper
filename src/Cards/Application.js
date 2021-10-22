@@ -49,7 +49,6 @@ class Application extends React.Component {
                     </>
                     : null}
             </>
-
         )
     }
 }
