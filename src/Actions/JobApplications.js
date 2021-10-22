@@ -1,4 +1,4 @@
-import { GET_APPLICATIONS } from "./Types";
+import {DELETE_APPLICATION, GET_APPLICATIONS} from "./Types";
 import { CREATE_APPLICATION } from "./Types";
 import { CHANGE_CURRENT_APPLICATION } from "./Types"
 
@@ -38,6 +38,20 @@ export const createJobApplication = (application) => {
         dispatch({
             type: CREATE_APPLICATION,
             payload: newApplication
+        })
+    }
+}
+
+export const deleteJobApplication = (application) => {
+    return async (dispatch) => {
+        const packet = {
+            method: "DELETE"
+        }
+
+        await fetch("https://bengarlock.com/api/v1/jobapps/" + application.id + "/", packet)
+        dispatch({
+            type: DELETE_APPLICATION,
+            payload: application
         })
     }
 }

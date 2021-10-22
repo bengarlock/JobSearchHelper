@@ -1,7 +1,8 @@
 import React from 'react'
 import "../Stylesheets/ApplicationInfo.css"
-import {connect} from "react-redux";
-import {toggleCompany} from "../Actions/Company";
+import { connect } from "react-redux";
+import { toggleCompany } from "../Actions/Company";
+import { deleteJobApplication } from "../Actions/JobApplications"
 import PropTypes from "prop-types";
 
 class ApplicationInfo extends React.Component {
@@ -20,7 +21,7 @@ class ApplicationInfo extends React.Component {
                 delete_clicked: 1
             })
         } else if (this.state.delete_clicked === 1) {
-            console.log("delete")
+            this.props.deleteJobApplication(this.props.currentApplication[0])
         } else {
             this.setState({
                 delete_clicked: 0
@@ -71,4 +72,4 @@ const mapStateToProps = (state) => ({
     currentApplication: state.applications.currentApplication
 })
 
-export default connect(mapStateToProps, {toggleCompany })(ApplicationInfo);
+export default connect(mapStateToProps, {toggleCompany, deleteJobApplication})(ApplicationInfo);
