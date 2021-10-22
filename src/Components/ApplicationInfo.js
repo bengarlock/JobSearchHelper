@@ -15,7 +15,7 @@ class ApplicationInfo extends React.Component {
         delete_clicked: false
     }
 
-    onClickHandler = (e) => {
+    onClickHandler = async (e) => {
         if (e.target.className === "delete") {
             this.setState({
                 delete_clicked: !this.state.delete_clicked
@@ -23,12 +23,8 @@ class ApplicationInfo extends React.Component {
         }
 
         if (!this.state.clicked) {
-            this.props.toggleCompany(this.props.application)
-            this.setState({
-                clicked: !this.state.clicked
-            })
-        } else {
-            this.props.toggleCompany()
+            await this.props.toggleCompany()
+            await this.props.toggleCompany(this.props.application)
             this.setState({
                 clicked: !this.state.clicked
             })
@@ -66,7 +62,6 @@ class ApplicationInfo extends React.Component {
     }
 
     render() {
-        console.log(this.state.clicked)
         return (
                 <div className="app-item-wrapper" onClick={this.onClickHandler}>
                     {this.renderApplication()}
