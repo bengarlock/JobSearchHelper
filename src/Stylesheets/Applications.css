@@ -6,6 +6,9 @@
 }
 
 #application-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 
 
 }
@@ -24,11 +27,14 @@
 #application-search-form button {
     outline: none;
     margin: 0;
-    width: 100%;
+    width: 25%;
+    background-color: #05167d;
+    border: 1px solid white;
+
 }
 
 #application-search-form button:hover {
-    background-color: #266e6e;
+    background-color: #2538a0;
     transition: .5s;
     color: white;
 }
