@@ -50,7 +50,6 @@ class ApplicationInfo extends React.Component {
     }
 
     render() {
-        console.log(this.props.currentApplication[0].company_name)
         return (
                 <div className="app-item-wrapper" onClick={this.onClickHandler}>
                     {this.renderApplication()}

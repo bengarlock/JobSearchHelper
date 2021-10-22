@@ -7,7 +7,7 @@ const dateFormatted = date.getMonth() + 1 + '/' + date.getDate() + '/' + date.ge
 const jobTitles = [
     "QA Engineer", "Developer Relations", "Developer advocacy", "Developer Evangelist",
     "Technical solutions engineer", "Creative developer", "Technical writer",
-    "Implementation Specialist", "Creative developer", "Deployment engineer", "Technical service support",
+    "Implementation Specialist", "Deployment engineer", "Technical service support",
     "Support Engineer", "Integration Specialist", "Customer Success Manager", "Tech Support Engineer",
     "Sales Engineer", "Technical Project Manager", "Solutions Engineer", "Customer Success Engineer",
     "DevOps Engineer", "Success Engineer"
@@ -59,9 +59,6 @@ class SocialLinks extends React.Component {
                 <div className="job-title-wrapper">
                     {this.renderJobTitleIdes()}
                 </div>
-
-
-
             </div>
         )
     }

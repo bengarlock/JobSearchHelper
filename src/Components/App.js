@@ -26,17 +26,15 @@ class App extends React.Component {
     render() {
         return (
             <>
-
-                    <Router basename={"/jobapplications"}>
-                        <Menu />
-                        <Route exact path="/"><Redirect to="/home" /></Route>
-                        <Route path="/home" component={Create} />
-                        <Route path="/coverletter" component={CoverLetterTemplates} />
-                        <Route path="/sociallinks" component={SocialLinks} />
-                        <Route path="/applications" component={Applications} />
-                        <Route path="/reset" component={Reset} />
-                    </Router>
-
+                <Router basename={"/jobapplications"}>
+                    <Menu />
+                    <Route exact path="/"><Redirect to="/home" /></Route>
+                    <Route path="/home" component={Create} />
+                    <Route path="/coverletter" component={CoverLetterTemplates} />
+                    <Route path="/sociallinks" component={SocialLinks} />
+                    <Route path="/applications" component={Applications} />
+                    <Route path="/reset" component={Reset} />
+                </Router>
             </>
         );
     }
