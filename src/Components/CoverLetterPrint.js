@@ -56,7 +56,6 @@ class PrintCoverLetter extends React.Component {
                                    body={this.props.body}
                                    closing={this.props.closing}
                                    ref={(el) => (this.componentRef = el)} />
-
             </div>
         );
     }

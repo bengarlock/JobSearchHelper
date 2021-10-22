@@ -11,12 +11,21 @@ class ApplicationInfo extends React.Component {
     }
 
     state = {
-        clicked: false,
-        delete_clicked: false
+        delete_clicked: 0
     }
 
     onClickHandler = () => {
-
+        if (this.state.delete_clicked === 0) {
+            this.setState({
+                delete_clicked: 1
+            })
+        } else if (this.state.delete_clicked === 1) {
+            console.log("delete")
+        } else {
+            this.setState({
+                delete_clicked: 0
+            })
+        }
     }
 
     renderApplication = () => {
