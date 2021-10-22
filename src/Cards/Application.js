@@ -30,7 +30,6 @@ class Application extends React.Component {
             })
             this.props.changeCurrentApplication({})
         }
-
     }
 
     render() {
