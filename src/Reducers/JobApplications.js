@@ -30,7 +30,6 @@ export default function (state = initialState, action) {
 
         case DELETE_APPLICATION:
             let updatedApplications = [...state.applications]
-            console.log(state.applications)
             updatedApplications = updatedApplications.filter(app => app.id !== action.payload.id)
             return {
                 ...state,
